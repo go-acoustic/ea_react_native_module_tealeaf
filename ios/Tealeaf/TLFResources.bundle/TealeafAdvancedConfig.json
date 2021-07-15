@@ -1,5 +1,5 @@
 {
-  "LibraryVersion": "10.6.19",
+  "LibraryVersion": "10.6.105",
   "FilterMessageTypes": false,
   "MessageTypes": "4,5,6",
   "AddMessageTypeHeader": true,
@@ -17,6 +17,7 @@
   "datePicker:dateChange": 1,
   "pickerView:valueChanged": 1,
   "textBox:textChange": 1,
+  "textBox:textChanged": 0,
   "textBox:_searchFieldBeginEditing": 0,
   "textBox:_searchFieldBeginChanged": 0,
   "textBox:_searchFieldEditingChanged": 0,
@@ -49,5 +50,15 @@
   "canvas:click": 0,
   "InitialZIndex": 500,
   "UseXpathId": false,
-  "SubViewArrayZIndexIncrementTrigger": 502
+  "SubViewArrayZIndexIncrementTrigger": 502,
+  "AddGestureRecognizerUIScrollView": true,
+  "AddGestureRecognizerUITextView": true,
+  "AddGestureRecognizerUIButton": true,
+  "AddGestureRecognizerUISwitch": true,
+  "AddGestureRecognizerUISegmentedControl": true,
+  "AddGestureRecognizerUIPickerView": true,
+  "AddGestureRecognizerUIDatePicker": true,
+  "AddGestureRecognizerUIPageControl": true,
+  "SwiftUICaptureNonVariadic": false,
+  "UIKeyboardCaptureTouches": false
 }

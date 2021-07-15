@@ -2,7 +2,7 @@
 //  EOMessage.h
 //  EOCore
 //
-// Copyright (C) 2015 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2021 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -12,7 +12,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EOPublicHeader.h"
+#import <EOCore/EOPublicHeader.h>
 
 @interface EOMessage : NSObject
 
