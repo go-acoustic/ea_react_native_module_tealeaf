@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2020 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2021 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -22,7 +22,7 @@
 #import <React/RCTBridge.h>
 #import <EOCore/EOCore.h>
 #import <EOCore/EOApplicationHelper.h>
-#import <TealeafReactNative/TealeafBridgingHeader.h>
+#import <Tealeaf/TealeafBridgingHeader.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
@@ -171,7 +171,8 @@ RCT_EXPORT_METHOD(logCustomEvent:(NSString *)eventName values:(NSDictionary *)va
  */
 RCT_EXPORT_METHOD(logExceptionEvent:(NSString *)message stack:(NSString *)stackInfo unhandled:(BOOL)unhandled resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
-    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logExceptionEvent:@"React Plugin" message:message stacktrace:stackInfo isUnhandled:unhandled]];
+    NSDictionary *exceptionDict = @{ @"type": @"React Plugin", @"message": message, @"stacktrace": stackInfo};
+    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logNSExceptionEvent:nil dataDictionary:exceptionDict isUnhandled:unhandled]];
     [self updateResult:result resolver:resolve rejecter:reject];
 }
 

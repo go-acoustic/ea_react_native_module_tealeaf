@@ -675,7 +675,9 @@ iOS | Android
 ```javascript
 cd ../ea_react_native_module-master/Example/NativeBase-KitchenSink
 yarn
-react-native link react-native-vector-icons
+cd ios
+pod install
+cd ..
 ```
 
 *	**Run on iOS**
