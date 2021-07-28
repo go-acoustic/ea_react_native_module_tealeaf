@@ -36,6 +36,7 @@ allprojects {
         }
         maven {
             // All of Tealeaf SDK libraries
+            // Might need to add to project's root gradle.build file
             url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/beta"
         }
     }
@@ -45,7 +46,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     // Tealeaf SDK libraries
-    implementation 'com.ea:eocore:2.0.82'
+    implementation 'com.ea:eocore:2.0.83'
     // Allow Main app to reference Tealeaf library
-    api 'com.ea:tealeaf:10.3.109'
+    api 'com.ea:tealeaf:10.3.115'
 }
