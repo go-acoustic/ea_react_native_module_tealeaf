@@ -1,11 +1,6 @@
 import React from "react";
 import { Root } from "native-base";
-// import { StackNavigator, DrawerNavigator } from "react-navigation";
-// import { createDrawerNavigator, createStackNavigator, createAppContainer } from "react-navigation";
-// import { createAppContainer } from 'react-navigation';
-// import { createStackNavigator } from 'react-navigation-stack';
-// import { createDrawerNavigator } from 'react-navigation-drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -149,7 +144,24 @@ import Network from "./screens/network/";
 import Map from "./screens/map/";
 
 const Drawer = createDrawerNavigator();
+var isDrawerOpenNow = false;
+var drawerCreateCount = 0;
+
 function DrawerNav() {
+    // Logic to see if drawer menu has open
+    if (drawerCreateCount <= 0) {
+      isDrawerOpenNow = false;
+    } else if (isDrawerOpenNow) {
+      isDrawerOpenNow = false;
+    } else {
+      isDrawerOpenNow = true;
+      // screen capture page
+      if (Platform.OS === 'ios' || Platform.OS === 'android') {
+        Tealeaf.logScreenLayoutWithDelay("MenuOpen", 500);
+      }
+    }
+    drawerCreateCount++;
+    console.log('isDrawerOpenNow:' + isDrawerOpenNow);
   return (
     <Drawer.Navigator
       initialRouteName = "Home"
@@ -190,11 +202,6 @@ function DrawerNav() {
     </Drawer.Navigator>
   );
 }
-
-// const Drawer = createDrawerNavigator(
-//     contentComponent: props => <SideBar {...props} />
-//   }
-// );
 
 const Stack = createStackNavigator();
 function StackNav() {
