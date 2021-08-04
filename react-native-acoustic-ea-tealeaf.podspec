@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
 	  core.frameworks = 'SystemConfiguration', 'CoreTelephony', 'CoreLocation', 'WebKit'
 	  core.library = 'z'
 	  core.resource = "ios/Tealeaf/TLFResources.bundle"
-	  core.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/ios/Tealeaf/Tealeaf.framework/Headers/"/** ' }
-	  core.vendored_frameworks = 'ios/Tealeaf/Tealeaf.framework'
+	  core.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/ios/Tealeaf/TealeafReactNative.framework/Headers/"/** ' }
+	  core.vendored_frameworks = 'ios/Tealeaf/TealeafReactNative.framework'
 	  core.dependency 'EOCoreDebug', '2.3.55'
   end
   s.subspec 'MD5' do |md5|
