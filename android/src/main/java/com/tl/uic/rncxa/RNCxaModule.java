@@ -187,8 +187,21 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
      * @param promise         Javascript Promise interface.
      */
     @ReactMethod
+    public void logScreenLayout(final String logicalPageName, int delay, final Promise promise) {
+        final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
+        updateResult(result, promise);
+    }
+
+    /**
+     * Log Current Screen Layout using native side background thread.
+     *
+     * @param logicalPageName Page name or title e.g. "Login View Controller"; Must not be empty.
+     * @param delay           Number of seconds to wait before logging the view.
+     * @param promise         Javascript Promise interface.
+     */
+    @ReactMethod
     public void logScreenLayoutWithDelay(final String logicalPageName, int delay, final Promise promise) {
-        final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 500 : delay, true);
+        final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
         updateResult(result, promise);
     }
 
