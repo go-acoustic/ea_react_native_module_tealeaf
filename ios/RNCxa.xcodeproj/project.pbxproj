@@ -3,18 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		66B925282050590C00DFC51F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
+		861C250789D97A664B8D9C6A /* libPods-RNCxaStandaloneDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72C20E5A819B527E18EE26B /* libPods-RNCxaStandaloneDebug.a */; };
 		9927869226A0CE1900356A5F /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 		9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
-		995DAEDD26B86A2800883CFE /* TealeafReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9927878926A243C900356A5F /* TealeafReactNative.framework */; };
-		995DAEDE26B86A2B00883CFE /* EOCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992EBD2421928C1A00FC7283 /* EOCore.framework */; };
-		995DAEDF26B86A3700883CFE /* EOCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992EBD2421928C1A00FC7283 /* EOCore.framework */; };
-		995DAEE026B86A3A00883CFE /* TealeafReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9927878926A243C900356A5F /* TealeafReactNative.framework */; };
-		9C4E0FEA8C6D7F43AB495AD8 /* Pods_RNCxaStandaloneDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */; };
+		99ABDBE926C1AFF6008EE56C /* TealeafReactNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ABDBE826C1AFF6008EE56C /* TealeafReactNative.xcframework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 /* End PBXBuildFile section */
 
@@ -41,23 +38,22 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCxa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxa.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.release.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.release.xcconfig"; sourceTree = "<group>"; };
+		2B4957AD02B3C21D79C2A6DA /* Pods-RNCxaStandaloneDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.debug.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		63079713DF9B46146F978C15 /* Pods-RNCxaStandaloneDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.release.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.release.xcconfig"; sourceTree = "<group>"; };
 		66B925272050590C00DFC51F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9927878326A2428400356A5F /* libRNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxaStandaloneDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9927878926A243C900356A5F /* TealeafReactNative.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealeafReactNative.framework; sourceTree = "<group>"; };
 		9927878B26A243F100356A5F /* EOCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9927878D26A2440300356A5F /* TealeafReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TealeafReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		992EBD2321928C1A00FC7283 /* TLFResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TLFResources.bundle; sourceTree = "<group>"; };
-		992EBD2421928C1A00FC7283 /* EOCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EOCore.framework; sourceTree = "<group>"; };
 		99312E5E20EC64C40060FE60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99312E6020EC64CD0060FE60 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		99312E6220EC64D40060FE60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		99312E6420EC64DB0060FE60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		995DAEDC26B86A0400883CFE /* EOCoreSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = EOCoreSettings.bundle; path = EOCore.framework/EOCoreSettings.bundle; sourceTree = "<group>"; };
-		A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.debug.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		99ABDBE826C1AFF6008EE56C /* TealeafReactNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TealeafReactNative.xcframework; sourceTree = "<group>"; };
+		A72C20E5A819B527E18EE26B /* libPods-RNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCxaStandaloneDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCxa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCxa.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCxa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCxa.m; sourceTree = "<group>"; };
-		CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCxaStandaloneDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B925282050590C00DFC51F /* WebKit.framework in Frameworks */,
-				995DAEDD26B86A2800883CFE /* TealeafReactNative.framework in Frameworks */,
-				995DAEDE26B86A2B00883CFE /* EOCore.framework in Frameworks */,
+				99ABDBE926C1AFF6008EE56C /* TealeafReactNative.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				995DAEE026B86A3A00883CFE /* TealeafReactNative.framework in Frameworks */,
-				995DAEDF26B86A3700883CFE /* EOCore.framework in Frameworks */,
 				9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */,
-				9C4E0FEA8C6D7F43AB495AD8 /* Pods_RNCxaStandaloneDebug.framework in Frameworks */,
+				861C250789D97A664B8D9C6A /* libPods-RNCxaStandaloneDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +109,7 @@
 				99312E6020EC64CD0060FE60 /* CoreLocation.framework */,
 				99312E5E20EC64C40060FE60 /* Foundation.framework */,
 				66B925272050590C00DFC51F /* WebKit.framework */,
-				CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */,
+				A72C20E5A819B527E18EE26B /* libPods-RNCxaStandaloneDebug.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,10 +117,9 @@
 		992EBD2121928C1A00FC7283 /* Tealeaf */ = {
 			isa = PBXGroup;
 			children = (
-				995DAEDC26B86A0400883CFE /* EOCoreSettings.bundle */,
+				99ABDBE826C1AFF6008EE56C /* TealeafReactNative.xcframework */,
 				9927878926A243C900356A5F /* TealeafReactNative.framework */,
 				992EBD2321928C1A00FC7283 /* TLFResources.bundle */,
-				992EBD2421928C1A00FC7283 /* EOCore.framework */,
 			);
 			path = Tealeaf;
 			sourceTree = "<group>";
@@ -135,8 +127,8 @@
 		9AD0CC2AA808F5A6F62A498E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */,
-				1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */,
+				2B4957AD02B3C21D79C2A6DA /* Pods-RNCxaStandaloneDebug.debug.xcconfig */,
+				63079713DF9B46146F978C15 /* Pods-RNCxaStandaloneDebug.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -183,7 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9927869926A0CE1900356A5F /* Build configuration list for PBXNativeTarget "RNCxaStandaloneDebug" */;
 			buildPhases = (
-				4275E486C00AFD89CD8CA74D /* [CP] Check Pods Manifest.lock */,
+				0EC1F976B30AA64781CE9806 /* [CP] Check Pods Manifest.lock */,
 				9927869126A0CE1900356A5F /* Sources */,
 				9927869326A0CE1900356A5F /* Frameworks */,
 				9927869726A0CE1900356A5F /* CopyFiles */,
@@ -232,7 +224,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4275E486C00AFD89CD8CA74D /* [CP] Check Pods Manifest.lock */ = {
+		0EC1F976B30AA64781CE9806 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -464,7 +456,7 @@
 		};
 		9927869A26A0CE1900356A5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */;
+			baseConfigurationReference = 2B4957AD02B3C21D79C2A6DA /* Pods-RNCxaStandaloneDebug.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -508,7 +500,7 @@
 		};
 		9927869B26A0CE1900356A5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */;
+			baseConfigurationReference = 63079713DF9B46146F978C15 /* Pods-RNCxaStandaloneDebug.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
