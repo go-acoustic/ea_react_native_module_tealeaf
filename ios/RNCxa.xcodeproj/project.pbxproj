@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		530179D4456302B06F78AA19 /* libPods-RNCxa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BEF76730B38773BD2EB6BD /* libPods-RNCxa.a */; };
 		66B925282050590C00DFC51F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
-		91758AB11620BD5D1013A081 /* libPods-RNCxaStandaloneDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5398CCB2AF928A72D2D4D08C /* libPods-RNCxaStandaloneDebug.a */; };
 		9927869226A0CE1900356A5F /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 		9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
+		A6A4C996BFECCF66E440E7F9 /* libPods-RNCxaStandaloneDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE54608BE26C8C3CB7B80A79 /* libPods-RNCxaStandaloneDebug.a */; };
+		AE1D01EB5E1D71AAA286CA78 /* libPods-RNCxa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FC3B19D296CFD42D8736E8 /* libPods-RNCxa.a */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +37,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D9379FBB3AA37CAFAC40EEF /* Pods-RNCxa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxa.release.xcconfig"; path = "Target Support Files/Pods-RNCxa/Pods-RNCxa.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNCxa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxa.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		393027C9E740B429794183B4 /* Pods-RNCxaStandaloneDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.release.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.release.xcconfig"; sourceTree = "<group>"; };
-		5398CCB2AF928A72D2D4D08C /* libPods-RNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCxaStandaloneDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DA0540559C2F8767439B5A5 /* Pods-RNCxa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxa.debug.xcconfig"; path = "Target Support Files/Pods-RNCxa/Pods-RNCxa.debug.xcconfig"; sourceTree = "<group>"; };
 		66B925272050590C00DFC51F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		74BEF76730B38773BD2EB6BD /* libPods-RNCxa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCxa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EB7095B16421D201B1FC9E9 /* Pods-RNCxaStandaloneDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.debug.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		9482EF9E361321E23B32B764 /* Pods-RNCxa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxa.debug.xcconfig"; path = "Target Support Files/Pods-RNCxa/Pods-RNCxa.debug.xcconfig"; sourceTree = "<group>"; };
 		9927878326A2428400356A5F /* libRNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxaStandaloneDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9927878B26A243F100356A5F /* EOCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9927878D26A2440300356A5F /* TealeafReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TealeafReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,9 +48,12 @@
 		99312E6020EC64CD0060FE60 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		99312E6220EC64D40060FE60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		99312E6420EC64DB0060FE60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A5FC3B19D296CFD42D8736E8 /* libPods-RNCxa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCxa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE54608BE26C8C3CB7B80A79 /* libPods-RNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCxaStandaloneDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCxa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCxa.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCxa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCxa.m; sourceTree = "<group>"; };
-		DB60518E788B31A2703C50F2 /* Pods-RNCxa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxa.release.xcconfig"; path = "Target Support Files/Pods-RNCxa/Pods-RNCxa.release.xcconfig"; sourceTree = "<group>"; };
+		D1D92126B526837E383BC49A /* Pods-RNCxaStandaloneDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.debug.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		D4808671A6BA1DAEC5B5C891 /* Pods-RNCxaStandaloneDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.release.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B925282050590C00DFC51F /* WebKit.framework in Frameworks */,
-				530179D4456302B06F78AA19 /* libPods-RNCxa.a in Frameworks */,
+				AE1D01EB5E1D71AAA286CA78 /* libPods-RNCxa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */,
-				91758AB11620BD5D1013A081 /* libPods-RNCxaStandaloneDebug.a in Frameworks */,
+				A6A4C996BFECCF66E440E7F9 /* libPods-RNCxaStandaloneDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +108,8 @@
 				99312E6020EC64CD0060FE60 /* CoreLocation.framework */,
 				99312E5E20EC64C40060FE60 /* Foundation.framework */,
 				66B925272050590C00DFC51F /* WebKit.framework */,
-				74BEF76730B38773BD2EB6BD /* libPods-RNCxa.a */,
-				5398CCB2AF928A72D2D4D08C /* libPods-RNCxaStandaloneDebug.a */,
+				A5FC3B19D296CFD42D8736E8 /* libPods-RNCxa.a */,
+				AE54608BE26C8C3CB7B80A79 /* libPods-RNCxaStandaloneDebug.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,10 +117,10 @@
 		9AD0CC2AA808F5A6F62A498E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5DA0540559C2F8767439B5A5 /* Pods-RNCxa.debug.xcconfig */,
-				DB60518E788B31A2703C50F2 /* Pods-RNCxa.release.xcconfig */,
-				8EB7095B16421D201B1FC9E9 /* Pods-RNCxaStandaloneDebug.debug.xcconfig */,
-				393027C9E740B429794183B4 /* Pods-RNCxaStandaloneDebug.release.xcconfig */,
+				9482EF9E361321E23B32B764 /* Pods-RNCxa.debug.xcconfig */,
+				0D9379FBB3AA37CAFAC40EEF /* Pods-RNCxa.release.xcconfig */,
+				D1D92126B526837E383BC49A /* Pods-RNCxaStandaloneDebug.debug.xcconfig */,
+				D4808671A6BA1DAEC5B5C891 /* Pods-RNCxaStandaloneDebug.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -149,7 +149,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNCxa" */;
 			buildPhases = (
-				25BC5BD2E90FB32EB63A7BFD /* [CP] Check Pods Manifest.lock */,
+				D82054A84D35529AE52F09CB /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -168,7 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9927869926A0CE1900356A5F /* Build configuration list for PBXNativeTarget "RNCxaStandaloneDebug" */;
 			buildPhases = (
-				6949DF5480BD8A3137911CC8 /* [CP] Check Pods Manifest.lock */,
+				23218E606ECF2A2094B593B8 /* [CP] Check Pods Manifest.lock */,
 				9927869126A0CE1900356A5F /* Sources */,
 				9927869326A0CE1900356A5F /* Frameworks */,
 				9927869726A0CE1900356A5F /* CopyFiles */,
@@ -217,29 +217,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25BC5BD2E90FB32EB63A7BFD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNCxa-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6949DF5480BD8A3137911CC8 /* [CP] Check Pods Manifest.lock */ = {
+		23218E606ECF2A2094B593B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,6 +233,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RNCxaStandaloneDebug-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D82054A84D35529AE52F09CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNCxa-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,7 +386,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DA0540559C2F8767439B5A5 /* Pods-RNCxa.debug.xcconfig */;
+			baseConfigurationReference = 9482EF9E361321E23B32B764 /* Pods-RNCxa.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -433,7 +433,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB60518E788B31A2703C50F2 /* Pods-RNCxa.release.xcconfig */;
+			baseConfigurationReference = 0D9379FBB3AA37CAFAC40EEF /* Pods-RNCxa.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -476,7 +476,7 @@
 		};
 		9927869A26A0CE1900356A5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EB7095B16421D201B1FC9E9 /* Pods-RNCxaStandaloneDebug.debug.xcconfig */;
+			baseConfigurationReference = D1D92126B526837E383BC49A /* Pods-RNCxaStandaloneDebug.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -520,7 +520,7 @@
 		};
 		9927869B26A0CE1900356A5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 393027C9E740B429794183B4 /* Pods-RNCxaStandaloneDebug.release.xcconfig */;
+			baseConfigurationReference = D4808671A6BA1DAEC5B5C891 /* Pods-RNCxaStandaloneDebug.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
