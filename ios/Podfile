@@ -25,8 +25,11 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
+target 'RNCxa' do
+  pod 'TealeafReactNativeDebug', '10.6.114'
+end
+
 target 'RNCxaStandaloneDebug' do
-  use_frameworks! :linkage => :static
   config = use_native_modules!
 
   use_react_native!(
@@ -44,6 +47,8 @@ target 'RNCxaStandaloneDebug' do
   # post_install do |installer|
   #   react_native_post_install(installer)
   # end
+  # pod 'react-native-acoustic-ea-tealeaf', :podspec => "/Users/ohernandez@us.ibm.com/git/github/ea_react_native_module_tealeaf 4/react-native-acoustic-ea-tealeaf.podspec"
+  pod 'TealeafReactNativeDebug', '10.6.114'
 end
 
 post_install do |installer|

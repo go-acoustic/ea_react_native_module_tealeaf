@@ -22,7 +22,7 @@
 #import <React/RCTBridge.h>
 #import <EOCore/EOCore.h>
 #import <EOCore/EOApplicationHelper.h>
-#import <Tealeaf/TealeafBridgingHeader.h>
+#import <TealeafReactNative/TealeafBridgingHeader.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
@@ -34,7 +34,7 @@
 
 @implementation RNCxa
 // To export a module named RNCxa
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(RNCxa);
 
 -(id)init {
     if ( self = [super init] ) {
@@ -278,39 +278,36 @@ RCT_EXPORT_METHOD(logScreenLayout:(NSString*)name resolver:(RCTPromiseResolveBlo
     });
 }
 
-///**
-// Requests that the framework logs the layout of the screen
-// @param viewController - UIViewController object whose layout needs to be logged.
-// @param views - Array of views that will be logged along with the provided viewController.
-// @param delay - number of seconds to wait before logging the view.
-// @param name - Custom name to associate with the view Controller
-// @return if the event was successfully logged or not.
-// */
-//RCT_EXPORT_METHOD(logScreenLayoutWithDelay:(NSString*)name andDelay:(nonnull NSNumber *)delay resolver:(RCTPromiseResolveBlock)resolve
-//                  rejecter:(RCTPromiseRejectBlock)reject) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        UIViewController *uv = nil;
-//        UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-//        /* Why a loop ? Do we want to go all the way back in view hierarchy ? In anycase its an infinite loop
-//         This change was made for RTC 275353 : "Instrumentation :- Wrong background when we add items to the cart from the search category"
-//         */
-//        while (topController.presentedViewController) {
-//            topController = topController.presentedViewController;
-//        }
-//        if (topController) {
-//            uv = topController;
-//        }
-//
-//        id result;
-//        //UIViewController *uv = [self getDefaultVC:nil]; //[[TLFCustomEvent sharedInstance] getCurrentDidAppearViewController];
-//        //        if (delay.floatValue <= 0) {
-//        //            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andName:name]];
-//        //        } else {
-//        result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andDelay:0.5 andName:name]];
-//        //        }
-//        [self updateResult:result resolver:resolve rejecter:reject];
-//    });
-//}
+/**
+ Requests that the framework logs the layout of the screen
+ @param viewController - UIViewController object whose layout needs to be logged.
+ @param views - Array of views that will be logged along with the provided viewController.
+ @param delay - number of seconds to wait before logging the view.
+ @param name - Custom name to associate with the view Controller
+ @return if the event was successfully logged or not.
+ */
+RCT_EXPORT_METHOD(logScreenLayoutWithDelay:(NSString*)name andDelay:(nonnull NSNumber *)delay resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        RCTLogInfo(@"logScreenLayoutWithDelay Name:%@ Delay:%@", name, delay);
+        UIViewController *uv = nil;
+        UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+        while (topController.presentedViewController) {
+            topController = topController.presentedViewController;
+        }
+        if (topController) {
+            uv = topController;
+        }
+
+        id result;
+        if (delay.floatValue <= 0) {
+            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andName:name]];
+        } else {
+            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andDelay:(delay.floatValue/1000) andName:name]];
+        }
+        [self updateResult:result resolver:resolve rejecter:reject];
+    });
+}
 
 - (NSString*)testModuleName:(NSString*)moduleName {
     if ([moduleName caseInsensitiveCompare:@"Tealeaf"]) {

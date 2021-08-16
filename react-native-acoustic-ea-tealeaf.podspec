@@ -23,17 +23,14 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
 	  core.frameworks = 'SystemConfiguration', 'CoreTelephony', 'CoreLocation', 'WebKit'
 	  core.library = 'z'
-	  core.resource = "ios/Tealeaf/TLFResources.bundle"
-	  core.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/ios/Tealeaf/Tealeaf.framework/Headers/"/** ' }
-	  core.vendored_frameworks = 'ios/Tealeaf/Tealeaf.framework'
-	  core.dependency 'EOCoreDebug', '2.3.55'
+	  core.dependency 'TealeafReactNativeDebug', '10.6.114'
   end
-  s.subspec 'MD5' do |md5|
-	  md5.dependency 'TealeafMD5Debug'
-	  md5.dependency 'IBMTealeafDebug/Core'
-  end
-  s.subspec 'SHA512' do |sha512|
-	  sha512.dependency 'TealeafSHA2Debug'
-	  sha512.dependency 'IBMTealeafDebug/Core'
-  end
+  # s.subspec 'MD5' do |md5|
+	 #  md5.dependency 'TealeafMD5Debug'
+	 #  md5.dependency 'IBMTealeafDebug/Core'
+  # end
+  # s.subspec 'SHA512' do |sha512|
+	 #  sha512.dependency 'TealeafSHA2Debug'
+	 #  sha512.dependency 'IBMTealeafDebug/Core'
+  # end
 end
