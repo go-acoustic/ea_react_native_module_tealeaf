@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6810FBE95FC74C29BB55F6FF /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5513B0C67599D08A4B0578B2 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */; };
+		26238696445E2DF5E17D7A05 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA870C7D41FF058C13C358E6 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */; };
+		4CEA54A23BB621701D776450 /* libPods-NativebaseKitchenSink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F736DDB6916EB8FA0F88A00A /* libPods-NativebaseKitchenSink.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F647784DE051B68FE1CAEAD7 /* libPods-NativebaseKitchenSink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264D10EE9A98BDD1202F4B3E /* libPods-NativebaseKitchenSink.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +36,14 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NativebaseKitchenSink/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativebaseKitchenSink/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NativebaseKitchenSink/main.m; sourceTree = "<group>"; };
-		264D10EE9A98BDD1202F4B3E /* libPods-NativebaseKitchenSink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativebaseKitchenSink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		350D37575D30169D09D2629D /* Pods-NativebaseKitchenSink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink.release.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink.release.xcconfig"; sourceTree = "<group>"; };
-		5513B0C67599D08A4B0578B2 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6D603165A18FB03DCAFD8F /* Pods-NativebaseKitchenSink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink.debug.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink.debug.xcconfig"; sourceTree = "<group>"; };
+		31CA5891066200C4444B45F1 /* Pods-NativebaseKitchenSink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink.debug.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink.debug.xcconfig"; sourceTree = "<group>"; };
+		6983C5EF2CD98BB30A80289A /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativebaseKitchenSink/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8D141D7B4C95C6CAB3475699 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86BAD6D05518B7B40058CE69 /* Pods-NativebaseKitchenSink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink.release.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink.release.xcconfig"; sourceTree = "<group>"; };
+		AA870C7D41FF058C13C358E6 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64FD0EE2B96AB903BCC5B19 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F58B652C88AE16504CEFDB34 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig"; path = "Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig"; sourceTree = "<group>"; };
+		F736DDB6916EB8FA0F88A00A /* libPods-NativebaseKitchenSink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativebaseKitchenSink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6810FBE95FC74C29BB55F6FF /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a in Frameworks */,
+				26238696445E2DF5E17D7A05 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F647784DE051B68FE1CAEAD7 /* libPods-NativebaseKitchenSink.a in Frameworks */,
+				4CEA54A23BB621701D776450 /* libPods-NativebaseKitchenSink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				264D10EE9A98BDD1202F4B3E /* libPods-NativebaseKitchenSink.a */,
-				5513B0C67599D08A4B0578B2 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */,
+				F736DDB6916EB8FA0F88A00A /* libPods-NativebaseKitchenSink.a */,
+				AA870C7D41FF058C13C358E6 /* libPods-NativebaseKitchenSink-NativebaseKitchenSinkTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		D2E55C3E8A9434903F016CA3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A6D603165A18FB03DCAFD8F /* Pods-NativebaseKitchenSink.debug.xcconfig */,
-				350D37575D30169D09D2629D /* Pods-NativebaseKitchenSink.release.xcconfig */,
-				8D141D7B4C95C6CAB3475699 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */,
-				F58B652C88AE16504CEFDB34 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */,
+				31CA5891066200C4444B45F1 /* Pods-NativebaseKitchenSink.debug.xcconfig */,
+				86BAD6D05518B7B40058CE69 /* Pods-NativebaseKitchenSink.release.xcconfig */,
+				6983C5EF2CD98BB30A80289A /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */,
+				B64FD0EE2B96AB903BCC5B19 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NativebaseKitchenSinkTests" */;
 			buildPhases = (
-				88168753319AF08DFA51C36F /* [CP] Check Pods Manifest.lock */,
+				426B6334DF51D1EEA075D275 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				573E86698EA12D42214C9290 /* [CP] Embed Pods Frameworks */,
-				0184A37A57FC93AF17CDFB28 /* [CP] Copy Pods Resources */,
+				DE916416AAB7EC071D63F6BC /* [CP] Embed Pods Frameworks */,
+				04483E63164AB20F0C22A3D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NativebaseKitchenSink" */;
 			buildPhases = (
-				7C4BDC9D8F1B6D0E196B277A /* [CP] Check Pods Manifest.lock */,
+				7E0985E9F2EE7987F1F0A4D3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				4FB2FC31EB7C2898FC176FA6 /* [CP] Embed Pods Frameworks */,
-				5B7D218F98F24C1E98955749 /* [CP] Copy Pods Resources */,
+				24BAB90A598EA6FBF65ECD0C /* [CP] Embed Pods Frameworks */,
+				C22BA05BD2C4E60F4A53D6A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,7 +264,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0184A37A57FC93AF17CDFB28 /* [CP] Copy Pods Resources */ = {
+		04483E63164AB20F0C22A3D3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,7 +281,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4FB2FC31EB7C2898FC176FA6 /* [CP] Embed Pods Frameworks */ = {
+		24BAB90A598EA6FBF65ECD0C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,41 +298,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		573E86698EA12D42214C9290 /* [CP] Embed Pods Frameworks */ = {
+		426B6334DF51D1EEA075D275 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B7D218F98F24C1E98955749 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C4BDC9D8F1B6D0E196B277A /* [CP] Check Pods Manifest.lock */ = {
+		7E0985E9F2EE7987F1F0A4D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,26 +342,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88168753319AF08DFA51C36F /* [CP] Check Pods Manifest.lock */ = {
+		C22BA05BD2C4E60F4A53D6A9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink/Pods-NativebaseKitchenSink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE916416AAB7EC071D63F6BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests/Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -428,7 +428,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D141D7B4C95C6CAB3475699 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */;
+			baseConfigurationReference = 6983C5EF2CD98BB30A80289A /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -455,7 +455,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F58B652C88AE16504CEFDB34 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */;
+			baseConfigurationReference = B64FD0EE2B96AB903BCC5B19 /* Pods-NativebaseKitchenSink-NativebaseKitchenSinkTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -479,7 +479,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A6D603165A18FB03DCAFD8F /* Pods-NativebaseKitchenSink.debug.xcconfig */;
+			baseConfigurationReference = 31CA5891066200C4444B45F1 /* Pods-NativebaseKitchenSink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 350D37575D30169D09D2629D /* Pods-NativebaseKitchenSink.release.xcconfig */;
+			baseConfigurationReference = 86BAD6D05518B7B40058CE69 /* Pods-NativebaseKitchenSink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
