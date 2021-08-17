@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
 	  core.frameworks = 'SystemConfiguration', 'CoreTelephony', 'CoreLocation', 'WebKit'
 	  core.library = 'z'
-	  core.dependency 'TealeafReactNativeDebug', '10.6.115'
+	  core.dependency 'TealeafReactNativeDebug', '10.6.114'
   end
   # s.subspec 'MD5' do |md5|
 	 #  md5.dependency 'TealeafMD5Debug'
