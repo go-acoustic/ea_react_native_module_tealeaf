@@ -3,7 +3,13 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
+workspace '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/ea_react_native_module_tealeaf/Example/NativeBase-KitchenSink/ios/NativebaseKitchenSink.xcworkspace'
+project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/ea_react_native_module_tealeaf/Example/NativeBase-KitchenSink/ios/NativebaseKitchenSink.xcodeproj'
+project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/iOS-SDK/iOSSrc/Tealeaf/Tealeaf.xcodeproj'
+project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/ea_react_native_module_tealeaf/ios/RNCxa.xcodeproj'
+
 target 'NativebaseKitchenSink' do
+  project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/ea_react_native_module_tealeaf/Example/NativeBase-KitchenSink/ios/NativebaseKitchenSink.xcodeproj'
   config = use_native_modules!
 
   use_react_native!(
@@ -23,6 +29,31 @@ target 'NativebaseKitchenSink' do
   # you should disable the next line.
   # use_flipper!()
 
+  # post_install do |installer|
+  #   react_native_post_install(installer)
+  # end
+end
+
+target 'RNCxa' do
+  project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/ea_react_native_module_tealeaf/ios/RNCxa.xcodeproj'
+#  pod 'TealeafReactNativeDebug', '10.6.114'
+end
+
+target 'XCTealeafReactNative' do
+  project '/Users/ohernandez@us.ibm.com/git/github/DebugLocal/iOS-SDK/iOSSrc/Tealeaf/Tealeaf.xcodeproj'
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  # use_flipper!()
   # post_install do |installer|
   #   react_native_post_install(installer)
   # end
