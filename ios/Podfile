@@ -23,10 +23,11 @@ install! 'cocoapods', :disable_input_output_paths => true
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
+source 'https://cdn.cocoapods.org/'
 platform :ios, '10.0'
 
 target 'RNCxa' do
-  pod 'TealeafReactNativeDebug', '10.6.114'
+  pod 'TealeafReactNativeDebug', '10.6.116'
 end
 
 target 'RNCxaStandaloneDebug' do
@@ -47,7 +48,7 @@ target 'RNCxaStandaloneDebug' do
   # post_install do |installer|
   #   react_native_post_install(installer)
   # end
-  pod 'TealeafReactNativeDebug', '10.6.114'
+  pod 'TealeafReactNativeDebug', '10.6.116'
 end
 
 post_install do |installer|
