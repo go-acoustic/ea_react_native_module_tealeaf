@@ -213,7 +213,7 @@ You will also need to open **TealeafBasicConfig.plist** to adjust **AppKey** and
 
 Manual installation
 
-Tealeaf React-Native Android module is built with Android Studio 3.2.1, and compiled against gradle version 4.6(3.2.1).
+Tealeaf React-Native Android module is built with Android Studio 4.2.1, and compiled against gradle version 6.1.1
 
 
 ## Skip this if Android Studio project already exists (YourApp/android):
@@ -222,15 +222,23 @@ Tealeaf React-Native Android module is built with Android Studio 3.2.1, and comp
 
 `$ react-native link react-native-acoustic-ea`    
 ```
-
-## Load required Javascript Bundle index.android.bundle under assets folder. Create directory assets if project does not contain it:
+## Create assets folder for Android SDK configuration files
 ```javascript
 (Open terminal in project directory) 
 
 `$ mkdir android/app/src/main/assets`
 ```
 
-## Create the bundle and put under assets(Required when app's Javascript code changes)
+## For ReactNative above Version 50, copy and paste all files in below folder
+
+### From:
+    MyApp/node_modules/react-native-acoustic-ea-tealeaf/android/src/main/assets
+
+### To:
+    MyApp/android/src/main/assets
+
+## For ReactNative below Version 50
+## Run below command to create the JS bundle and put under assets(Required when app's Javascript code changes)
 ```javascript
 `$ react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
 ```
@@ -238,15 +246,25 @@ Tealeaf React-Native Android module is built with Android Studio 3.2.1, and comp
 ## Open Android Studio Project
 Follow IDE instructions to update plugin or dependency requirements.
 
+## Insert Android SDK Maven repo URL
+### MyApp/android/build.gradle
+
+```javascript
+allprojects {
+    repositories {
+        maven {
+            // Tealeaf SDK libraries
+            url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/master"
+        }
+    }
+```
+
 ## Insert required permission in androidmanifest.xml file
 
 ```javascript
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
-<application
-      android:usesCleartextTraffic="true"
 ```
 
 ## Insert if Geo location logging is needed
@@ -258,6 +276,10 @@ Follow IDE instructions to update plugin or dependency requirements.
 Insert below code snippet in MainActivity for Gesture events capturing:
 
 ```javascript
+import android.view.MotionEvent;
+import com.tl.uic.Tealeaf;
+
+// Handles Gesture event logging
 public boolean dispatchTouchEvent(MotionEvent e)
     {
         Tealeaf.dispatchTouchEvent(this, e);
