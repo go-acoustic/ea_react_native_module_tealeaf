@@ -2,14 +2,14 @@
     "AutoLayout": {
         "IBMGlobalScreenSettings":{
             "ScreenChange": true,
-            "DisplayName": "SplashScreen",
-            "CaptureLayoutDelay": 0,
+            "DisplayName": "",
+            "CaptureLayoutDelay": 1,
             "ScreenShot": true,
             "NumberOfWebViews": 0,
             "CaptureUserEvents": true,
             "CaptureScreenVisits": false,
             "CaptureLayoutOn": 2,
-            "CaptureScreenshotOn": 1
+            "CaptureScreenshotOn": 2
         }
     },
     "AppendMapIds": {
