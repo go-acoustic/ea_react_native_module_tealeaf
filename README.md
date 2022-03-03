@@ -3,6 +3,7 @@
 ---
 ## Features
 - Will automatically capture pages after they completed by React Javascript Bridge.
+- iOS will automatically capture control accessibility labels as use them as the id
 - Will log ReactLayoutTime via custom event based on when component render and completion of React Javascript Bridge, but this will requiere of manual instrumentation to get correct values.
 ---
 ## Getting started
@@ -170,8 +171,15 @@ Add **environmental variables**:
 Note: **TLF_AUTO_ENABLE** is no longer needed as of version 7.6.0.
 
 ![](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/screenshots/add_environment_variables.png)
+You will also need to open **TealeafBasicConfig.plist** to adjust these config values:
 
-You will also need to open **TealeafBasicConfig.plist** to adjust **AppKey** and **PostMessageUrl**.
+ **AppKey**
+ 
+ **PostMessageUrl**
+ 
+ **SetGestureDetector** -> false
+ 
+ **LogViewLayoutOnScreenTransition** -> false
 
 ![](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/screenshots/adjust_TLFResources_bundle.png)
 
@@ -239,21 +247,13 @@ allprojects {
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-## Setup Tealeaf Gesture in Android MainActivity.java class
-Insert below code snippet in MainActivity for Gesture events capturing:
+You will also need to open **TealeafBasicConfig.properties** to adjust these config values:
 
-```javascript
-import android.view.MotionEvent;
-import com.tl.uic.Tealeaf;
-
-// Handles Gesture event logging
-public boolean dispatchTouchEvent(MotionEvent e)
-    {
-        Tealeaf.dispatchTouchEvent(this, e);
-        return super.dispatchTouchEvent(e);
-    }
-```
-You will also need to open **TealeafBasicConfig.properties** to adjust **AppKey** and **PostMessageUrl**.
+ **AppKey**
+ 
+ **PostMessageUrl**
+ 
+ **LogViewLayoutOnScreenTransition** -> false
 
 ![](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/screenshots/TealeafBasicConfig_appkey.png)
 
@@ -387,31 +387,22 @@ try {
 }
 ```
 
-### Capture Event Listener Actions **(Type 4)**
-You will need to the following in order to capture an event listener, which will get captured as a Tealeaf type 4 message object. 
+### Capture Event Listener Actions & Ids **(Type 4)**
+Currently iOS & android will automatically capture click events, be sure to check the configuration steps and update your config files accordingly.
 
-#### Syntax
-* **nodeHandler** - Native node handle for a component from React Native.
-```
-// Add import
-import {NativeModules, findNodeHandle} from 'react-native';
-const Tealeaf = NativeModules.RNCxa;
-
-logClickEvent(nodeHandler)
-```
+Currently automatic click id capture is only supported on iOS. With the way react native renders dom elements to native components often times the users click event bubbles up from the text inside the button or the view directly outside, with that in mind you can add an `accessibilityLabel` prop to each of the surrounding elements and that will be used as the id in the Tealeaf dashboard.
 
 #### Example
 ```javascript
-<ListItem button onPress={(evt) => {Tealeaf.logClickEvent(findNodeHandle(evt.target)); this.toggleSwitch2();}}>
-  <CheckBox
-    color="red"
-    checked={this.state.checkbox2}
-    onPress={(evt) => {Tealeaf.logClickEvent(findNodeHandle(evt.target)); this.toggleSwitch2();}}
-  />
-  <Body>
-    <Text>Daily Stand Up</Text>
-  </Body>
-</ListItem>
+<View accessibilityLabel={"lets_go"} style={{ marginBottom: 80 }}>
+  <Button
+    accessibilityLabel={"lets_go"}
+    style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
+    onPress={() => this.props.navigation.openDrawer()}
+  >
+    <Text accessibilityLabel={"lets_go"}>Lets Go!</Text>
+  </Button>
+</View>
 ```
 The full example can also be reviewed at https://github.com/acoustic-analytics/ea_react_native_module/blob/master/Example/NativeBase-KitchenSink/src/screens/checkbox/index.js
 
