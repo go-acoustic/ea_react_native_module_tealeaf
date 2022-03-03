@@ -32,55 +32,22 @@ To upgrade node_modules and get latest call:
 ___
 ### React
 
-In order to capture correctly screen tracking based on [React Navigation v5](https://reactnavigation.org/docs/screen-tracking/). Please add the following:
+In order to capture correctly screen tracking based on [React Navigation v5](https://reactnavigation.org/docs/5.x/screen-tracking/). Please add the following:
 
 #### Syntax added to App.js
 ```javascript
-import {NativeModules, findNodeHandle, Platform} from 'react-native';
-const Tealeaf = NativeModules.RNCxa;
-import {TLTRN} from "../node_modules/react-native-acoustic-ea-tealeaf/lib/TLTRN";
+import { Tealeaf } from 'react-native-acoustic-ea-tealeaf';
 import { useRef } from 'react';
-
-let currentScreen = "Home";
-let prevScreen = null;
-// Turn off for now due to performance - added logic in NavigationContainer instead
-// TLTRN.init(currentScreen, 0);
 
 export default () => {
   const navigationRef = useRef();
-  const routeNameRef = useRef();
 
   return (
-    <Root>
-      <NavigationContainer
-        ref={navigationRef}
-        onReady={() =>
-          (routeNameRef.current = navigationRef.current.getCurrentRoute().name)
-        }
-        onStateChange={async () => {
-          const previousRouteName = routeNameRef.current;
-          const currentRouteName = navigationRef.current.getCurrentRoute().name;
-
-          if (previousRouteName !== currentRouteName) {
-            // The line below uses the expo-firebase-analytics tracker
-            // https://docs.expo.io/versions/latest/sdk/firebase-analytics/
-            // Change this line to use another Mobile analytics SDK
-            console.log("currentScreen:", currentRouteName);
-            // set page name
-            TLTRN.currentScreen = currentRouteName;
-            // screen capture page
-            if (Platform.OS === 'ios' || Platform.OS === 'android') {
-              await Tealeaf.logScreenLayout(currentRouteName);
-            }
-          }
-
-          // Save the current route name for later comparison
-          routeNameRef.current = currentRouteName;
-        }}
-      >
+    <Tealeaf>
+      <NavigationContainer ref={navigationRef}>
         <StackNav/>
       </NavigationContainer>
-    </Root>
+    </Tealeaf>
   );
 };
 ```
@@ -91,7 +58,7 @@ In order to capture correctly screen tracking based on [React Navigation v1](htt
 ```javascript
 import {NativeModules, findNodeHandle} from 'react-native';
 const Tealeaf = NativeModules.RNCxa;
-import {TLTRN} from "../node_modules/react-native-acoustic-ea-tealeaf/lib/TLTRN";
+import {TLTRN} from "react-native-acoustic-ea-tealeaf";
 
 let currentScreen = "Home";
 let prevScreen = null;
