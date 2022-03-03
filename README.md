@@ -3,7 +3,7 @@
 ---
 ## Features
 - Will automatically capture pages after they completed by React Javascript Bridge.
-- iOS will automatically capture control accessibility labels as use them as the id
+- iOS will automatically capture control accessibility labels and use them as the id
 - Will log ReactLayoutTime via custom event based on when component render and completion of React Javascript Bridge, but this will requiere of manual instrumentation to get correct values.
 ---
 ## Getting started
@@ -390,7 +390,7 @@ try {
 ### Capture Event Listener Actions & Ids **(Type 4)**
 Currently iOS & android will automatically capture click events, be sure to check the configuration steps and update your config files accordingly.
 
-Currently automatic click id capture is only supported on iOS. With the way react native renders dom elements to native components often times the users click event bubbles up from the text inside the button or the view directly outside, with that in mind you can add an `accessibilityLabel` prop to each of the surrounding elements and that will be used as the id in the Tealeaf dashboard.
+Currently automatic click id capture is only supported on iOS. With the way react native renders dom elements to native components often times the users click event bubbles up from the text inside the button or the view directly outside, with that in mind you can add an `accessibilityLabel` prop to each of the surrounding elements and it will be used as the id in the Tealeaf dashboard.
 
 #### Example
 ```javascript
