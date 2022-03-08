@@ -4,7 +4,7 @@
 ## Features
 - Will automatically capture pages after they completed by React Javascript Bridge.
 - iOS will automatically capture control accessibility labels and use them as the id
-- Will log ReactLayoutTime via custom event based on when component render and completion of React Javascript Bridge, but this will requiere of manual instrumentation to get correct values.
+- Will log ReactLayoutTime via custom event based on when component render and completion of React Javascript Bridge.
 ---
 ## Getting started
 
@@ -21,7 +21,7 @@ or
 Since React Native 0.60 and higher, [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) makes the installation process simpler.
 
 -----
-### Manual installation using React Native 0.59.9 and lower
+## Manual installation using React Native 0.59.9 and lower
 
 This will add it to your iOS Xcode project and Android Studio project:
 
@@ -31,74 +31,10 @@ To upgrade node_modules and get latest call:
 
 `$ npm install`
 ___
-### React
 
-In order to capture correctly screen tracking based on [React Navigation v5](https://reactnavigation.org/docs/5.x/screen-tracking/). Please add the following:
+## Build configuration on iOS for React Native 0.59.9 and lower
 
-#### Syntax added to App.js
-```javascript
-import { Tealeaf } from 'react-native-acoustic-ea-tealeaf';
-import { useRef } from 'react';
-
-export default () => {
-  const navigationRef = useRef();
-
-  return (
-    <Tealeaf>
-      <NavigationContainer ref={navigationRef}>
-        <StackNav/>
-      </NavigationContainer>
-    </Tealeaf>
-  );
-};
-```
----
-In order to capture correctly screen tracking based on [React Navigation v1](https://reactnavigation.org/docs/1.x/screen-tracking/). Please add the following:
-
-#### Syntax added to App.js
-```javascript
-import {NativeModules, findNodeHandle} from 'react-native';
-const Tealeaf = NativeModules.RNCxa;
-import {TLTRN} from "react-native-acoustic-ea-tealeaf";
-
-let currentScreen = "Home";
-let prevScreen = null;
-// Initialize the library with starting page and no debug information.
-TLTRN.init(currentScreen, 0);
-
-// gets the current screen from navigation state
-function getCurrentRouteName(navigationState) {
-  if (!navigationState) {
-    return null;
-  }
-  const route = navigationState.routes[navigationState.index];
-  // dive into nested navigators
-  if (route.routes) {
-    return getCurrentRouteName(route);
-  }
-  return route.routeName;
-}
-
-export default () =>
-  <Root>
-    <AppContainer 
-        onNavigationStateChange={(prevState, currentState) => {
-            currentScreen = getCurrentRouteName(currentState);
-            prevScreen = getCurrentRouteName(prevState);
-
-            if (prevScreen !== currentScreen) {
-                // the line below uses the Tealeaf library to get latest screen
-                // console.log("currentScreen:",currentScreen);
-                TLTRN.currentScreen = currentScreen;
-            }
-        }}
-    />
-  </Root>;
-```
----
-### Build configuration on iOS for React Native 0.59.9 and lower
-
-## Using Cocopods
+### Using Cocopods
 If the CocoaPods package manager is new to you, please first review its [installation guide](https://guides.cocoapods.org/using/getting-started.html). Setup your Podfile (found at ios/Podfile as below, replacing all references to _YOUR_PROJECT_TARGET_ with your project target (it's the same as project name by default).
 #### Template - Podfile
 ```
@@ -184,7 +120,7 @@ You will also need to open **TealeafBasicConfig.plist** to adjust these config v
 ![](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/screenshots/adjust_TLFResources_bundle.png)
 
 ---
-### Build configuration on Android
+## Build configuration on Android
 
 Manual installation
 
@@ -203,23 +139,6 @@ Tealeaf React-Native Android module is built with Android Studio 4.2.1, and comp
 
 `$ mkdir android/app/src/main/assets`
 ```
-
-## For ReactNative above Version 50, copy and paste all files in below folder
-
-### From:
-    MyApp/node_modules/react-native-acoustic-ea-tealeaf/android/src/main/assets
-
-### To:
-    MyApp/android/src/main/assets
-
-## For ReactNative below Version 50
-## Run below command to create the JS bundle and put under assets(Required when app's Javascript code changes)
-```javascript
-`$ react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
-```
-
-## Open Android Studio Project
-Follow IDE instructions to update plugin or dependency requirements.
 
 ## Insert Android SDK Maven repo URL
 ### MyApp/android/build.gradle
@@ -270,42 +189,34 @@ You will also need to open **TealeafBasicConfig.properties** to adjust these con
     NativeBase-KitchenSink/Example/android
 
 ---
-### React Integration
+## React Integration
 
-#### Getting correct ReactLayoutTime values
+In order to correctly capture screen tracking based on [React Navigation v5](https://reactnavigation.org/docs/5.x/screen-tracking/). Please add the following:
 
-- In order to get correct ReactLayoutTime, you will need to set current screen
- name during render method manually in the React pages.
-
-#### Syntax
 ```javascript
-// Add import
-import {NativeModules, findNodeHandle} from 'react-native';
-const Tealeaf = NativeModules.RNCxa;
+import { Tealeaf } from 'react-native-acoustic-ea-tealeaf';
+import { useRef } from 'react';
 
-try {
-  var result = await Tealeaf.setCurrentScreenName("HomePage");
-  console.log("setCurrentScreenName", result);
-} catch (e) {
-  console.error(e);
-}
+export default () => {
+  const navigationRef = useRef();
+
+  return (
+    <Tealeaf>
+      <NavigationContainer ref={navigationRef}>
+        <StackNav/>
+      </NavigationContainer>
+    </Tealeaf>
+  );
+};
 ```
 
-#### Example React Page Instrumented
+#### In order to correctly capture screen tracking without React Navigation. Please add the following:
+ 
+
+
  ```javascript
-// Example:
 import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Button,
-  Left,
-  Right,
-  Body,
-  Text
-} from "native-base";
+import { Container, Header, Title, Content, Button, Left, Right, Body, Text } from "native-base";
 import styles from "./styles";
 
 // Add import
@@ -338,23 +249,6 @@ export default Header1;
 
 ```
 ---
-
-## SDK Usage
-
-### Declaration Use Of WCXA React Native Module
-You will need to declare a module object to be able to use it. 
-
-**Note:** *You will need to use [findNodeHandle](https://facebook.github.io/react-native/docs/direct-manipulation#measurelayoutrelativetonativenode-onsuccess-onfail), which can be used to get native node handle for a component.*
-
-#### Syntax
-```javascript
-// Add import
-import {NativeModules, findNodeHandle} from 'react-native';
-const Tealeaf = NativeModules.RNCxa;
-```
-
-#### Example
-The full example can also be reviewed at https://github.com/acoustic-analytics/ea_react_native_module/blob/master/Example/NativeBase-KitchenSink/src/screens/checkbox/index.js
 
 ### Log Screen View Name **(Type 2)**
 You will need to the following in order to log loading a new screen view name or unloading a screen view name, which will get captured as a Tealeaf type 2 message object. 
@@ -404,7 +298,6 @@ Currently automatic click id capture is only supported on iOS. With the way reac
   </Button>
 </View>
 ```
-The full example can also be reviewed at https://github.com/acoustic-analytics/ea_react_native_module/blob/master/Example/NativeBase-KitchenSink/src/screens/checkbox/index.js
 
 ### Log Custom Event **(Type 5)**
 You will need to the following in order to log a custom event, which will get captured as a Tealeaf type 5 message object. 
@@ -454,7 +347,6 @@ class Home extends Component {
     Tealeaf.logScreenLayout("Home");
   }
 ```
-The full example can also be reviewed at https://github.com/acoustic-analytics/ea_react_native_module/blob/master/Example/NativeBase-KitchenSink/src/screens/home/index.js
 
 
 ### Capture Gestures **(Type 11)**
@@ -509,7 +401,7 @@ const Tealeaf = NativeModules.RNCxa;
 
 var moduleNameEOCore = 'EOCore';
 var moduleNameTealeaf = 'Tealeaf';
-// This will update the appkey for payload to use.
+// This will update the GetImageDataOnScreenLayout config.
 Tealeaf.setBooleanConfigItemForKey("GetImageDataOnScreenLayout", true, moduleNameTealeaf);
 ```
 
@@ -638,46 +530,6 @@ try {
 }
 ```
 
-# Demo
-## Sample Code with integrated
-### Using NativeBase KitchenSink v2.12.0
+## Demo
 
-iOS | Android
- :-----:| :-----:
- ![ios-demo](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/Example/NativeBase-KitchenSink/screenshots/iOS.gif) | ![android-demo](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/Example/NativeBase-KitchenSink/screenshots/Android.gif)
-
-
-* NativeBase-KitchenSink taken from https://github.com/GeekyAnts/NativeBase-KitchenSink which is at react-native-wcxa/Example/NativeBase-KitchenSink. Documentation is at https://github.com/acoustic-analytics/ea_react_native_module/tree/master/Example/NativeBase-KitchenSink.
-
-## Installation instructions
-
-#### In command line window
-```javascript
-cd ../ea_react_native_module-master/Example/NativeBase-KitchenSink
-yarn
-cd ios
-pod install
-cd ..
-```
-
-*	**Run on iOS**
-	*	Opt #1:
-		*	Open the project in Xcode from `ios/NativeBase-KitchenSink.xcodeproj`
-		*	Click `run` button to simulate
-	*	Opt #2:
-		*	Run `react-native run-ios` in your terminal
-
-
-*	**Run on Android**
-	*	Make sure you have an `Android emulator` installed and running
-	*	Run `react-native run-android` in your terminal
-
-
-## Notes
-
-There are several know issues between npm install versus yarn install. Since yarn is a Facebook tool. It normally has fixes patched for installing dependancies. 
-
-You also need to open ../CXA_react_native_module-master/Example/NativeBase-KitchenSink/ios/NativebaseKitchenSink.xcodeproj. Open File->Project Settings.. and change to use Legacy Build System.
-
-![](https://github.com/acoustic-analytics/ea_react_native_module/raw/master/screenshots/xcode_legacybuild.png)
-
+[NativeBase-KitchenSink](https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/tree/master/Example/NativeBase-KitchenSink) sample app
