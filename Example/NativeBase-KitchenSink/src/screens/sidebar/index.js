@@ -229,6 +229,7 @@ class SideBar extends Component {
 
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button

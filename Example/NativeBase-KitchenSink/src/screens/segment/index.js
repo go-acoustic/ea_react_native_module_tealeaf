@@ -52,6 +52,7 @@ class NBSegment extends Component {
         <Content>
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button

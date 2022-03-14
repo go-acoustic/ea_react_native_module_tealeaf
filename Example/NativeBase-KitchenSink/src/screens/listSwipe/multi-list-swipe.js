@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ListView } from "react-native";
 import {
   Container,
   Header,
@@ -59,6 +58,7 @@ class MultiListSwipe extends Component {
         <Content>
           <List
             dataArray={this.state.listViewData}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem style={{ paddingLeft: 20 }}>
                 <Text>

@@ -52,6 +52,7 @@ class ListSwipe extends Component {
         <Content scrollEnabled={false} contentContainerStyle={{ flex: 1 }}>
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button
