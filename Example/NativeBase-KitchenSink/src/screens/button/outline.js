@@ -29,7 +29,11 @@ class Outline extends Component {
           <Right />
         </Header>
 
-        <Content padder style={{ backgroundColor: "#fff" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "#fff" }}>
           <Button bordered light style={styles.mb15}>
             <Text>Light</Text>
           </Button>

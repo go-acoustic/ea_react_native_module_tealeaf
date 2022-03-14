@@ -29,7 +29,11 @@ class Transparent extends Component {
           <Right />
         </Header>
 
-        <Content padder style={{ backgroundColor: "#fff" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "#fff" }}>
           <Button transparent light style={styles.mb15}>
             <Text>Light</Text>
           </Button>

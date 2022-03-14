@@ -59,7 +59,11 @@ class ErrorTryCatch extends Component {
           <Right />
         </Header>
 
-        <Content padder style={{ backgroundColor: "#FFF" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "#FFF" }}>
           <Button block primary style={styles.mb15} 
             onPress={this.handleTryCatch}>
             <Text>Trigger Try Catch Error</Text>

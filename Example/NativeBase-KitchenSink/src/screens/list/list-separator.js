@@ -32,7 +32,6 @@ class NHListSeparator extends Component {
         </Header>
 
         <Content 
-          horizontal
           scrollEnabled={false}
           contentContainerStyle={{width: '100%'}}>
           <Separator bordered>

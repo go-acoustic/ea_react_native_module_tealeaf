@@ -33,7 +33,9 @@ class InlineLabel extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Item inlineLabel>
               <Label>Username</Label>

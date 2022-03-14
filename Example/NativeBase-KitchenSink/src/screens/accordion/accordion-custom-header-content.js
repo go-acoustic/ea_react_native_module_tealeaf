@@ -79,12 +79,17 @@ class AccordionCustomHeaderContent extends Component {
             <Title>Custom Header Content</Title>
           </Body>
           <Right />
-        </Header>
-        <Content padder style={{ backgroundColor: "white" }}>
+        </Header> 
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "white" }}>
           <Accordion
             dataArray={dataArray}
             animation={true}
-            expanded={true}
+            expanded={[]}
             renderHeader={this._renderHeader}
             renderContent={this._renderContent}
           />

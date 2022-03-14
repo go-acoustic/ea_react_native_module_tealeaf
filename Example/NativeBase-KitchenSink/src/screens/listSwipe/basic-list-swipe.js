@@ -31,7 +31,9 @@ class BasicListSwipe extends Component {
           <Right />
         </Header>
 
-        <Content scrollEnabled={false}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <SwipeRow
             leftOpenValue={75}
             rightOpenValue={-75}

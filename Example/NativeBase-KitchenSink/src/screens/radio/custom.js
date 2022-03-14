@@ -73,7 +73,6 @@ class NHCustomRadio extends Component {
         </Header>
 
         <Content 
-          horizontal
           scrollEnabled={false}
           contentContainerStyle={{width: '100%'}}>
           <ListItem

@@ -61,7 +61,10 @@ class SegmentNB extends Component {
           </Button>
         </Segment>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           {this.state.seg === 1 && <Text>Puppies Selected</Text>}
           {this.state.seg === 2 && <Text>Kittens Selected</Text>}
           {this.state.seg === 3 && <Text>Cubs Selected</Text>}

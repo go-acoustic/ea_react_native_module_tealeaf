@@ -33,7 +33,9 @@ class FloatingLabel extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>

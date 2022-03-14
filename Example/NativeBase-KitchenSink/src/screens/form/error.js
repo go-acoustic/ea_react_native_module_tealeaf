@@ -32,7 +32,10 @@ class Error extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Form>
             <Item error>
               <Input placeholder="Textbox with Error Input" />

@@ -29,7 +29,6 @@ class IconFamily extends Component {
           <Right />
         </Header>
         <Content 
-          horizontal
           scrollEnabled={false}
           contentContainerStyle={{width: '100%'}}>
           <ListItem>

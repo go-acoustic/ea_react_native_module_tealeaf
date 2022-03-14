@@ -40,7 +40,10 @@ class Header4 extends Component {
           </Right>
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Text>Header with Icon Button & Text Buttons</Text>
         </Content>
       </Container>

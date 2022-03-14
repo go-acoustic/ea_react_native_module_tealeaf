@@ -45,8 +45,13 @@ class AccordionDefault extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder style={{ backgroundColor: "white" }}>
-          <Accordion dataArray={dataArray} animation={false} expanded={0} />
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "white" }}>
+          <Accordion dataArray={dataArray} animation={false} expanded={[0]} />
         </Content>
       </Container>
     );

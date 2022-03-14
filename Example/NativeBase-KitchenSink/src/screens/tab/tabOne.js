@@ -4,7 +4,10 @@ import { Content, Card, CardItem, Text, Body } from "native-base";
 export default class TabOne extends Component {
   render() {
     return (
-      <Content padder>
+      <Content 
+        scrollEnabled={false}
+        contentContainerStyle={{width: '100%'}}
+        padder>
         <Card>
           <CardItem>
             <Body>

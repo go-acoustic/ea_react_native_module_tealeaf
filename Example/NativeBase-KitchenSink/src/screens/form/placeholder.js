@@ -32,7 +32,9 @@ class Placeholder extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Item>
               <Input placeholder="Username" />

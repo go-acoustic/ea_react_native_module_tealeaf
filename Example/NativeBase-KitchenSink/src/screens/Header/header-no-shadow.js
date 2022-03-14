@@ -35,7 +35,10 @@ class HeaderNoShadow extends Component {
             </Button>
           </Right>
         </Header>
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Text>Header with noShadow prop</Text>
         </Content>
       </Container>
