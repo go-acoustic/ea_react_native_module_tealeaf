@@ -15,12 +15,12 @@ import {
   Body,
   Switch,
   Radio,
+  Item,
   Picker,
   Separator
 } from "native-base";
 import styles from "./styles";
 
-const Item = Picker.Item;
 
 class NHListIcon extends Component {
   constructor(props) {

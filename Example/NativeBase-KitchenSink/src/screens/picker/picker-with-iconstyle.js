@@ -10,11 +10,10 @@ import {
   Body,
   Left,
   Picker,
-  Form
+  Form,
+  Item
 } from "native-base";
 import styles from "./styles";
-
-const Item = Picker.Item;
 
 class PickerWithIconStyle extends Component {
   constructor(props) {

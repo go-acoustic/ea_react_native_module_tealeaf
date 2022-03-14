@@ -11,11 +11,10 @@ import {
   Body,
   Left,
   Picker,
-  ListItem
+  ListItem,
+  Item
 } from "native-base";
 import styles from "./styles";
-
-const Item = Picker.Item;
 
 class NHPicker extends Component {
   constructor(props) {
