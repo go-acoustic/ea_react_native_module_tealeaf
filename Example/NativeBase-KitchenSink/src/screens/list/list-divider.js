@@ -30,7 +30,10 @@ class NHListDivider extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <ListItem itemDivider>
             <Text>A</Text>
           </ListItem>

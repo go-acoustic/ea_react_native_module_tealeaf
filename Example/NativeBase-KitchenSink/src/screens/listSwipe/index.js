@@ -49,7 +49,10 @@ class ListSwipe extends Component {
           <Right />
         </Header>
 
-        <Content scrollEnabled={false} contentContainerStyle={{ flex: 1 }}>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <List
             dataArray={datas}
             keyExtractor={(item, index) => String(index)}

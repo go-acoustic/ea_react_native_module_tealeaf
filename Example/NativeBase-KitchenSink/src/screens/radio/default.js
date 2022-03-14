@@ -72,7 +72,10 @@ class NHDefaultRadio extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <ListItem
             selected={this.state.radio1}
             onPress={() => this.toggleRadio1()}

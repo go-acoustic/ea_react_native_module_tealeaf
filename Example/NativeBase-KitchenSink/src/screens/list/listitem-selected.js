@@ -46,7 +46,10 @@ class NHListItemSelected extends Component {
           </Body>
           <Right />
         </Header>
-        <Content>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <FlatList
             data={this.state.datas}
             extraData={this.state}
