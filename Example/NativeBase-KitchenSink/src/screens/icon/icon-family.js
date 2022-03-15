@@ -28,7 +28,9 @@ class IconFamily extends Component {
           </Body>
           <Right />
         </Header>
-        <Content>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <ListItem>
             <Text style={{ width: 220 }}>Ionicons</Text>
             <Icon type="Ionicons" name="home" style={{ color: "#999" }} />

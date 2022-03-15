@@ -27,7 +27,10 @@ class Header1 extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button onPress={() => this.props.navigation.goBack()}>
             <Text>Back</Text>
           </Button>

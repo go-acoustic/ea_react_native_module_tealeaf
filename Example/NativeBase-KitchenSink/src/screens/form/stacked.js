@@ -33,7 +33,9 @@ class Stacked extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Item stackedLabel>
               <Label>Username</Label>

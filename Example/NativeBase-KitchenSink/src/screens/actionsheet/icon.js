@@ -42,7 +42,10 @@ export default class ActionSheetNB extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button
             onPress={() =>
               ActionSheet.show(

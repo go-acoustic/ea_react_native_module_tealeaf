@@ -26,7 +26,10 @@ class NHSearchbar extends Component {
           </Button>
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button
             block
             onPress={() => this.props.navigation.openDrawer()}

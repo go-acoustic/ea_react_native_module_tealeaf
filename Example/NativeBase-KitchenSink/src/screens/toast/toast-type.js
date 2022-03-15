@@ -13,6 +13,7 @@ import {
   Toast
 } from "native-base";
 import styles from "./styles";
+import { TLTRN } from "react-native-acoustic-ea-tealeaf";
 
 class ToastType extends Component {
   constructor(props) {
@@ -36,12 +37,18 @@ class ToastType extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button
             onPress={() =>
               Toast.show({
                 text: "Wrong password!",
-                buttonText: "Okay"
+                buttonText: "Okay",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Default Toast</Text>
@@ -53,7 +60,10 @@ class ToastType extends Component {
               Toast.show({
                 text: "Wrong password!",
                 buttonText: "Okay",
-                type: "success"
+                type: "success",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Success Toast</Text>
@@ -65,7 +75,10 @@ class ToastType extends Component {
               Toast.show({
                 text: "Wrong password!",
                 buttonText: "Okay",
-                type: "warning"
+                type: "warning",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Warning Toast</Text>
@@ -77,7 +90,10 @@ class ToastType extends Component {
               Toast.show({
                 text: "Wrong password!",
                 buttonText: "Okay",
-                type: "danger"
+                type: "danger",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Danger Toast</Text>

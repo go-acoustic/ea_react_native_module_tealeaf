@@ -10,11 +10,10 @@ import {
   Body,
   Left,
   Picker,
-  Form
+  Form,
+  Item
 } from "native-base";
 import styles from "./styles";
-
-const Item = Picker.Item;
 
 class PickerTextItemText extends Component {
   constructor(props) {
@@ -43,7 +42,9 @@ class PickerTextItemText extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Picker
               mode="dropdown"

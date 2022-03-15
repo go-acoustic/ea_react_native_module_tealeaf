@@ -13,6 +13,7 @@ import {
   Toast
 } from "native-base";
 import styles from "./styles";
+import { TLTRN } from "react-native-acoustic-ea-tealeaf";
 
 class BasicToast extends Component {
   constructor(props) {
@@ -36,12 +37,18 @@ class BasicToast extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button
             onPress={() =>
               Toast.show({
                 text: "Wrong password!",
-                buttonText: "Okay"
+                buttonText: "Okay",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Toast</Text>

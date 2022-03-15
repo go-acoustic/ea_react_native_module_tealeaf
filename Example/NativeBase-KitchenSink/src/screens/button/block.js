@@ -29,7 +29,11 @@ class Block extends Component {
           <Right />
         </Header>
 
-        <Content padder style={{ backgroundColor: "#FFF" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "#FFF" }}>
           <Button block light style={styles.mb15}>
             <Text>Light</Text>
           </Button>

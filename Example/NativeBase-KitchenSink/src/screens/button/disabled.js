@@ -30,7 +30,9 @@ class Disabled extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <View style={{ paddingHorizontal: 20, padding: 10 }}>
             <Button disabled style={styles.mb15}>
               <Text>Default</Text>

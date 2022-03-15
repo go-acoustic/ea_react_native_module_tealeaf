@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ListView } from "react-native";
 import {
   Container,
   Header,
@@ -30,7 +29,6 @@ const datas = [
 class MultiListSwipe extends Component {
   constructor(props) {
     super(props);
-    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
       basic: true,
       listViewData: datas
@@ -57,9 +55,13 @@ class MultiListSwipe extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <List
-            dataSource={this.ds.cloneWithRows(this.state.listViewData)}
+            dataArray={this.state.listViewData}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem style={{ paddingLeft: 20 }}>
                 <Text>

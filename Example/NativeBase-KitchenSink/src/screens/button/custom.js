@@ -29,7 +29,10 @@ class Custom extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Button small style={styles.mb15}>
             <Text>Default Small</Text>
           </Button>

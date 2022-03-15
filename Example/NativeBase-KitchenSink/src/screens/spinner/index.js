@@ -37,7 +37,9 @@ class NHSpinner extends Component {
 
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Spinner />
           <Spinner color="red" />
           <Spinner color="green" />

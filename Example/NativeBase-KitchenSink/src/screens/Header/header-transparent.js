@@ -31,7 +31,10 @@ class HeaderTransparent extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Text>Header with transparent prop</Text>
         </Content>
       </Container>

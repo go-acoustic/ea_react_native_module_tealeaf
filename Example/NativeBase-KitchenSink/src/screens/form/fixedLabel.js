@@ -33,7 +33,9 @@ class FixedLabel extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Form>
             <Item fixedLabel>
               <Label>Username</Label>

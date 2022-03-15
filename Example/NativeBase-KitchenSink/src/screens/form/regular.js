@@ -31,7 +31,10 @@ class Regular extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Form>
             <Item regular>
               <Input placeholder="Regular Textbox" />

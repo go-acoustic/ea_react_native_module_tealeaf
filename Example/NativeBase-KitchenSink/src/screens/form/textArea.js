@@ -29,7 +29,10 @@ class TextArea extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Textarea rowSpan={5} bordered placeholder="Textarea" />
         </Content>
       </Container>

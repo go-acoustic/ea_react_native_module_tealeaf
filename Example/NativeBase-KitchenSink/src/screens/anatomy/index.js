@@ -35,7 +35,10 @@ class Anatomy extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Text>Content goes here (internal)</Text>
         </Content>
 

@@ -15,12 +15,12 @@ import {
   Body,
   Switch,
   Radio,
+  Item,
   Picker,
   Separator
 } from "native-base";
 import styles from "./styles";
 
-const Item = Picker.Item;
 
 class NHListIcon extends Component {
   constructor(props) {
@@ -53,7 +53,9 @@ class NHListIcon extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Separator bordered noTopBorder />
           <ListItem icon>
             <Left>
