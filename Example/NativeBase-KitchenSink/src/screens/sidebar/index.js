@@ -221,6 +221,9 @@ class SideBar extends Component {
     return (
       <Container>
         <Content
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
           bounces={false}
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
@@ -229,6 +232,7 @@ class SideBar extends Component {
 
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button

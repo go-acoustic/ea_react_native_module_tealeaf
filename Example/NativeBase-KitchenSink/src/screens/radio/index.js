@@ -45,9 +45,13 @@ class NHRadio extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button

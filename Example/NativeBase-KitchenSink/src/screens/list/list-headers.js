@@ -30,7 +30,9 @@ class NHListHeader extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <ListItem itemHeader first>
             <Text>COMEDY</Text>
           </ListItem>

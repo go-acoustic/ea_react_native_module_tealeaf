@@ -33,7 +33,10 @@ class NHBadge extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Badge style={styles.mb}>
             <Text>2</Text>
           </Badge>

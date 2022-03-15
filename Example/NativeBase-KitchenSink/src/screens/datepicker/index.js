@@ -42,7 +42,11 @@ class NHDatePicker extends Component {
           <Right />
         </Header>
 
-        <Content padder style={{ backgroundColor: "#fff" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "#fff" }}>
           <DatePicker
             defaultDate={new Date(2018, 4, 4)}
             minimumDate={new Date(2018, 1, 1)}

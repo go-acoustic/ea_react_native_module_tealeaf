@@ -37,7 +37,10 @@ class NHThumbnail extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <View style={{ flex: 1, alignItems: "center" }}>
             <Text style={styles.mb10}>Square Thumbnail</Text>
             <Thumbnail square small source={logo} style={styles.mb10} />

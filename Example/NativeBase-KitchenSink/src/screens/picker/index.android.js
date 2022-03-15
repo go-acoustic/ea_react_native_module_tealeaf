@@ -50,7 +50,9 @@ class NHPicker extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#4CDA64" }}>

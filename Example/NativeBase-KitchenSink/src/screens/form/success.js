@@ -32,7 +32,10 @@ class Success extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Form>
             <Item success>
               <Input placeholder="Textbox with Success Input" />

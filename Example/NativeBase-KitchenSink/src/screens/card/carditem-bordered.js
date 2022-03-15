@@ -31,7 +31,10 @@ class NHCardItemBordered extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Card style={styles.mb}>
             <CardItem header bordered>
               <Text>NativeBase</Text>

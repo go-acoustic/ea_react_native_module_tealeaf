@@ -32,7 +32,10 @@ class Icons extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Grid>
             <Row style={styles.row}>
               <Col style={styles.col}>

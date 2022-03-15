@@ -31,7 +31,9 @@ class SwipeRowCustomStyle extends Component {
           <Right />
         </Header>
 
-        <Content scrollEnabled={false}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <SwipeRow
             style={{ backgroundColor: "#9370DB" }}
             leftOpenValue={75}

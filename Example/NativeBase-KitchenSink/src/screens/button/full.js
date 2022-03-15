@@ -29,7 +29,10 @@ class Full extends Component {
           <Right />
         </Header>
 
-        <Content style={{ backgroundColor: "#fff" }}>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          style={{ backgroundColor: "#fff" }}>
           <Button full light style={styles.mt15}>
             <Text>Light</Text>
           </Button>

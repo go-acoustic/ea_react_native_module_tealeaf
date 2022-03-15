@@ -53,7 +53,9 @@ class NHListIcon extends Component {
           <Right />
         </Header>
 
-        <Content>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}>
           <Separator bordered noTopBorder />
           <ListItem icon>
             <Left>

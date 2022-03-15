@@ -36,7 +36,10 @@ class NHCardImage extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Card style={styles.mb}>
             <CardItem>
               <Left>

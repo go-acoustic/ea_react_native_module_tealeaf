@@ -45,11 +45,16 @@ class AccordionIcon extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder style={{ backgroundColor: "white" }}>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "white" }}>
           <Accordion
             dataArray={dataArray}
-            animation={true}
-            expanded={true}
+            animation={false}
+            expanded={[]}
             icon="add"
             expandedIcon="remove"
           />

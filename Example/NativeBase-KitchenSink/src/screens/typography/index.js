@@ -35,7 +35,10 @@ class NHTypography extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <H1 style={styles.mb10}>Header One</H1>
           <H2 style={styles.mb10}>Header Two</H2>
           <H3 style={styles.mb10}>Header Three</H3>

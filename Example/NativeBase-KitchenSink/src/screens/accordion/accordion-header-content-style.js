@@ -45,11 +45,16 @@ class AccordionHeaderContentStyle extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder style={{ backgroundColor: "white" }}>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder 
+          style={{ backgroundColor: "white" }}>
           <Accordion
             dataArray={dataArray}
             animation={true}
-            expanded={true}
+            expanded={[]}
             headerStyle={{ backgroundColor: "#b7daf8" }}
             contentStyle={{ backgroundColor: "#ddecf8" }}
           />

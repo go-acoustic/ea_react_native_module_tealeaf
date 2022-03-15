@@ -31,7 +31,10 @@ class HeaderSpan extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
+        <Content 
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          padder>
           <Text>Header span example</Text>
         </Content>
       </Container>

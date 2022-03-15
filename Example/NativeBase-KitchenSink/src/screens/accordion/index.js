@@ -56,9 +56,14 @@ class NHAccordion extends Component {
           <Right />
         </Header>
 
-        <Content style={{ backgroundColor: "white" }}>
+        <Content 
+          horizontal
+          scrollEnabled={false}
+          contentContainerStyle={{width: '100%'}}
+          style={{ backgroundColor: "white" }}>
           <List
             dataArray={datas}
+            keyExtractor={(item, index) => String(index)}
             renderRow={data =>
               <ListItem
                 button
