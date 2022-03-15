@@ -7,7 +7,6 @@
 * Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
 * prohibited.
 ********************************************************************************************/
-import { NativeModules } from 'react-native';
 
-const Tealeaf = NativeModules.RNCxa;
-export default Tealeaf;
+export { default as Tealeaf } from './lib/components/TeaLeaf'
+export { default as TLTRN } from './lib/TLTRN'

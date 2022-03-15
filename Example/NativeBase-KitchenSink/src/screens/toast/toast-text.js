@@ -13,6 +13,7 @@ import {
   Toast
 } from "native-base";
 import styles from "./styles";
+import { TLTRN } from "react-native-acoustic-ea-tealeaf";
 
 class ToastText extends Component {
   constructor(props) {
@@ -42,7 +43,10 @@ class ToastText extends Component {
               Toast.show({
                 text: "Wrong password!",
                 textStyle: { color: "yellow" },
-                buttonText: "Okay"
+                buttonText: "Okay",
+                onClose: () => {
+                  TLTRN.logScreenLayout("Wrong password!");
+                }
               })}
           >
             <Text>Toast</Text>

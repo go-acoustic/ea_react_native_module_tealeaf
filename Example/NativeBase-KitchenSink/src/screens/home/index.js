@@ -28,12 +28,13 @@ class Home extends Component {
             <H3 style={styles.text}>NativeBase components</H3>
             <View style={{ marginTop: 8 }} />
           </View>
-          <View style={{ marginBottom: 80 }}>
+          <View accessibilityLabel={"lets_go"} style={{ marginBottom: 80 }}>
             <Button
+              accessibilityLabel={"lets_go"}
               style={{ backgroundColor: "#6FAF98", alignSelf: "center" }}
               onPress={() => this.props.navigation.openDrawer()}
             >
-              <Text>Lets Go!</Text>
+              <Text accessibilityLabel={"lets_go"}>Lets Go!</Text>
             </Button>
           </View>
         </ImageBackground>
