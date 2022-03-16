@@ -10,7 +10,6 @@
 		66B925282050590C00DFC51F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
 		9927869226A0CE1900356A5F /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 		9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B925272050590C00DFC51F /* WebKit.framework */; };
-		9C4E0FEA8C6D7F43AB495AD8 /* Pods_RNCxaStandaloneDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCxa.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCxa.m */; };
 /* End PBXBuildFile section */
 
@@ -37,17 +36,14 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCxa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxa.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.release.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.release.xcconfig"; sourceTree = "<group>"; };
 		66B925272050590C00DFC51F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9927869C26A0CE1900356A5F /* libRNCxaStandaloneDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCxaStandaloneDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		99312E5E20EC64C40060FE60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99312E6020EC64CD0060FE60 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		99312E6220EC64D40060FE60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		99312E6420EC64DB0060FE60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCxaStandaloneDebug.debug.xcconfig"; path = "Target Support Files/Pods-RNCxaStandaloneDebug/Pods-RNCxaStandaloneDebug.debug.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNCxa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCxa.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCxa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCxa.m; sourceTree = "<group>"; };
-		CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCxaStandaloneDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9927869626A0CE1900356A5F /* WebKit.framework in Frameworks */,
-				9C4E0FEA8C6D7F43AB495AD8 /* Pods_RNCxaStandaloneDebug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +94,6 @@
 				99312E6020EC64CD0060FE60 /* CoreLocation.framework */,
 				99312E5E20EC64C40060FE60 /* Foundation.framework */,
 				66B925272050590C00DFC51F /* WebKit.framework */,
-				CC45517F4BDC2DADC806353A /* Pods_RNCxaStandaloneDebug.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +101,6 @@
 		9AD0CC2AA808F5A6F62A498E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */,
-				1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,7 +147,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9927869926A0CE1900356A5F /* Build configuration list for PBXNativeTarget "RNCxaStandaloneDebug" */;
 			buildPhases = (
-				4275E486C00AFD89CD8CA74D /* [CP] Check Pods Manifest.lock */,
 				9927869126A0CE1900356A5F /* Sources */,
 				9927869326A0CE1900356A5F /* Frameworks */,
 				9927869726A0CE1900356A5F /* CopyFiles */,
@@ -202,31 +193,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4275E486C00AFD89CD8CA74D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNCxaStandaloneDebug-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -434,7 +400,6 @@
 		};
 		9927869A26A0CE1900356A5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A199E0646B90749AC05EFF0F /* Pods-RNCxaStandaloneDebug.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -480,7 +445,6 @@
 		};
 		9927869B26A0CE1900356A5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E3A8D91CBC27BCA78825044 /* Pods-RNCxaStandaloneDebug.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
