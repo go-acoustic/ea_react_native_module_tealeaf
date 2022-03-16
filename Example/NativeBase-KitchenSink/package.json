@@ -17,7 +17,7 @@
     "native-base": "^2.15.2",
     "react": "17.0.1",
     "react-native": "0.63.4",
-    "react-native-acoustic-ea-tealeaf": "file:/Users/Developer/react-native-acoustic-ea-tealeaf-v13.0.4.tgz",
+    "react-native-acoustic-ea-tealeaf": "file:/Users/Developer/react-native-acoustic-ea-tealeaf-v13.0.7.tgz",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-maps": "^0.28.0",
     "react-native-reanimated": "^2.2.0",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime": "^7.14.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^27.0.2",
