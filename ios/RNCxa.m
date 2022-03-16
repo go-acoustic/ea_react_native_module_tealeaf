@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2021 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2022 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -22,7 +22,7 @@
 #import <React/RCTBridge.h>
 #import <EOCore/EOCore.h>
 #import <EOCore/EOApplicationHelper.h>
-#import <Tealeaf/TealeafBridgingHeader.h>
+#import <TealeafReactNative/TealeafBridgingHeader.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
@@ -209,6 +209,17 @@ RCT_EXPORT_METHOD(logLocationWithLatitudeLongitude:(double)lat longitude:(double
  */
 RCT_EXPORT_METHOD(logClickEvent:(nonnull NSNumber *)target resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
+    [self logClickEvent:target controlId:nil resolver:resolve rejecter:reject];
+}
+
+/**
+ @discussion Requests that the framework logs the click events on any UIControl or UIView. Click event is a normalized form of touch up inside event.
+ @param target - Native node handle for a component from React Native.
+ @param controlId - Control id a component from React Native.
+ @return Boolean value will return whether it was able to log the click event.
+ */
+RCT_EXPORT_METHOD(logClickEvent:(nonnull NSNumber *)target controlId:(NSString *)controlId resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
     [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, UIView *> *viewRegistry) {
         // Get view
         UIView *view;
@@ -226,7 +237,7 @@ RCT_EXPORT_METHOD(logClickEvent:(nonnull NSNumber *)target resolver:(RCTPromiseR
             return;
         }
         
-        id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logClickEvent:view data:nil]];
+        id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logClickEvent:view controlId:controlId data:nil]];
         [self updateResult:result resolver:resolve rejecter:reject];
     }];
 }
