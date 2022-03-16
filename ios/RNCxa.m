@@ -205,16 +205,6 @@ RCT_EXPORT_METHOD(logLocationWithLatitudeLongitude:(double)lat longitude:(double
 /**
  @discussion Requests that the framework logs the click events on any UIControl or UIView. Click event is a normalized form of touch up inside event.
  @param target - Native node handle for a component from React Native.
- @return Boolean value will return whether it was able to log the click event.
- */
-RCT_EXPORT_METHOD(logClickEvent:(nonnull NSNumber *)target resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject) {
-    [self logClickEvent:target controlId:nil resolver:resolve rejecter:reject];
-}
-
-/**
- @discussion Requests that the framework logs the click events on any UIControl or UIView. Click event is a normalized form of touch up inside event.
- @param target - Native node handle for a component from React Native.
  @param controlId - Control id a component from React Native.
  @return Boolean value will return whether it was able to log the click event.
  */
