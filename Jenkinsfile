@@ -496,10 +496,10 @@ def publishRelease() {
     exampleJson = JsonOutput.prettyPrint(exampleJson)
     writeFile(file:"${examplePackageFile}", text: exampleJson)
     
-    // withCredentials([string(credentialsId: 'NPMJS_TOKEN', variable: 'NPMJS_TOKEN')]) {
-    //     sh 'echo "//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}" >> ~/.npmrc'
-    //     runCMD('''cd \"''' + releaseDir + '''\" && npm publish''')
-    // }
+    withCredentials([string(credentialsId: 'NPMJS_TOKEN', variable: 'NPMJS_TOKEN')]) {
+        sh 'echo "//registry.npmjs.org/:_authToken=${NPMJS_TOKEN}" >> ~/.npmrc'
+        runCMD('''cd \"''' + releaseDir + '''\" && npm publish''')
+    }
 
     updateDescription()
     def commitMsg = "Release ${name} build: ${currentVersion}"
