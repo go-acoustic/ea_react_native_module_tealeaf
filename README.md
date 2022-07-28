@@ -118,7 +118,7 @@ export default Header1;
 # Demo
 ## Sample Code with integrated
 ### Using NativeBase v3 KitchenSink
- ![demo](https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/blob/develop/Example/nativebase-v3-kitchensink/assets/demo.png)
+ ![demo](https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/blob/master/Example/nativebase-v3-kitchensink/assets/demo.png)
 
 * NativeBase-KitchenSink taken from https://github.com/GeekyAnts/nativebase-v3-kitchensink which is at Example/nativebase-v3-kitchensink. 
 
