@@ -1,0 +1,96 @@
+/********************************************************************************************
+* Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+*
+* NOTICE: This file contains material that is confidential and proprietary to
+* Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
+* industrial property rights of Acoustic, L.P. except as may be provided in an agreement with
+* Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
+* prohibited.
+********************************************************************************************/
+
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+
+println("Executing config.gradle")
+
+def writeConfig(json) {
+    def module_path = project(':react-native-acoustic-ea-tealeaf').projectDir.getPath()
+    def propertiesFile = "$module_path/src/main/assets/TealeafBasicConfig.properties"
+    
+    println("Writing config to file $propertiesFile")
+    
+    FileInputStream _file = new FileInputStream(propertiesFile);
+    Properties properties = new Properties();
+    properties.load(_file);
+    _file.close();
+
+    FileOutputStream out = new FileOutputStream(propertiesFile);
+
+    json.each { key, value ->
+        if(key != "Tealeaf"){ return }
+
+        value.each { config_key, config_value ->
+            if(config_value.getClass() != java.lang.String
+            && config_value.getClass() != java.lang.Boolean
+            && config_value.getClass() != java.lang.Integer){
+                return
+            }
+            properties.setProperty(config_key, config_value.toString())
+        }
+    }
+
+    properties.store(out, null);
+    out.close();
+}
+
+def getConfigJSON() {
+    def configFile = "$project.rootDir/../TealeafConfig.json"
+    
+    println("Reading file $configFile")
+    
+    def jsonSlurper = new JsonSlurper()
+    def data = jsonSlurper.parse(new File(configFile))
+}
+
+def overrideLayoutConfig(){
+    def configFilePath = "$project.rootDir/../TealeafConfig.json"
+    def module_path = project(':react-native-acoustic-ea-tealeaf').projectDir.getPath()
+    def layoutConfigPath = "$module_path/src/main/assets/TealeafLayoutConfig.json"
+    def layoutConfigDefaultPath = "$module_path/src/main/assets/TealeafLayoutConfigDefault.json"
+
+    def configFile = new File(configFilePath)
+
+    def jsonSlurper = new JsonSlurper()
+    def data = jsonSlurper.parse(configFile)
+
+    def override = data.Tealeaf.layoutConfig;
+
+    def overrideJson =  JsonOutput.toJson(override)
+
+
+    if(override != null){
+        def layoutConfigFile = new File(layoutConfigPath)
+        layoutConfigFile.text = overrideJson
+    }else{
+          def layoutConfigDefaultFile = new File(layoutConfigDefaultPath)
+          def layoutConfigFile = new File(layoutConfigPath)
+          layoutConfigFile.text = layoutConfigDefaultFile.text
+
+    }   
+}
+
+
+try {
+    
+    writeConfig(getConfigJSON())
+
+    overrideLayoutConfig()
+    
+} catch (FileNotFoundException e) {
+    e.printStackTrace()
+} catch (IOException e) {
+    e.printStackTrace()
+}

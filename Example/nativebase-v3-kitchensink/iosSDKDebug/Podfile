@@ -1,0 +1,51 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+workspace 'KitchenSinkappnativebase.xcworkspace'
+project 'KitchenSinkappnativebase.xcodeproj'
+project '../../../../iOS-SDK/iOSSrc/Tealeaf/Tealeaf.xcodeproj'
+
+platform :ios, '11.0'
+
+target 'KitchenSinkappnativebase' do
+  project 'KitchenSinkappnativebase.xcodeproj'
+  use_unimodules!
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  # Uncomment the code below to enable Flipper.
+  #
+  # You should not install Flipper in CI environments when creating release
+  # builds, this will lead to significantly slower build times.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work.
+  #
+  #  use_flipper!
+  #  post_install do |installer|
+  #    flipper_post_install(installer)
+  #  end
+end
+
+target 'XCTealeafReactNative' do
+  project '../../../../iOS-SDK/iOSSrc/Tealeaf/Tealeaf.xcodeproj'
+#  use_frameworks! :linkage => :static
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  # use_flipper!()
+
+  # post_install do |installer|
+  #   react_native_post_install(installer)
+  # end
+end

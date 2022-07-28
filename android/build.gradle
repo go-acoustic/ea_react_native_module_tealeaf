@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     // Tealeaf SDK libraries
-    implementation 'com.ea:eocore:2.0.93'
+    implementation 'com.ea:eocore:2.0.288'
     // Allow Main app to reference Tealeaf library
-    api 'com.ea:tealeaf:10.3.121'
+    api 'com.ea:tealeaf:10.3.274'
 }

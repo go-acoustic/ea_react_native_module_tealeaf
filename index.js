@@ -8,5 +8,7 @@
 * prohibited.
 ********************************************************************************************/
 
+
 export { default as Tealeaf } from './lib/components/TeaLeaf'
 export { default as TLTRN } from './lib/TLTRN'
+export { default as RNCxa } from './lib/RNCxa'

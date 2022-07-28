@@ -27,7 +27,9 @@
 #import <Foundation/Foundation.h>
 
 @implementation RNTealeafDynamicLoad
-+ (void)load{
++ (void)load {
+    [[EOApplicationHelper sharedInstance] setConfigItem:kConfigurableItemSetGestureDetector value:@"false" forModuleName:@"Tealeaf"];
+    [[EOApplicationHelper sharedInstance] setConfigItem:kConfigurableItemLogViewLayoutOnScreenTransition value:@"false" forModuleName:@"Tealeaf"];
     [[TLFApplicationHelper sharedInstance] enableTealeafFramework];
 }
 @end
@@ -232,7 +234,54 @@ RCT_EXPORT_METHOD(logClickEvent:(nonnull NSNumber *)target controlId:(NSString *
     }];
 }
 
+/**
+ @discussion Requests that the framework logs the text change events.
+ @param target - Native node handle for a component from React Native.
+ @param controlId - Control id a component from React Native.
+ @param text - The input string from txt control.
+ @return Boolean value will return whether it was able to log the text change event.
+ */
+RCT_EXPORT_METHOD(logTextChangeEvent:(nonnull NSNumber *)target controlId:(NSString *)controlId text:(nonnull NSString *)text resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, UIView *> *viewRegistry) {
+        // Get view
+        UIView *view;
+        
+        if ([target intValue] == -1) {
+            // Use main view?
+            //            UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+            //            view = window.rootViewController.view;
+        } else {
+            view = viewRegistry[target];
+        }
+        
+        if (!view) {
+            reject(RCTErrorUnspecified, [NSString stringWithFormat:@"No view found with reactTag: %@", target], nil);
+            return;
+        }
+        
+        NSDictionary* data;
+        if (text != nil) {
+            data = @{@"text":text};
+        }
+        
+        id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logTextChangeEvent:view data:data]];
+        [self updateResult:result resolver:resolve rejecter:reject];
+    }];
+}
+
 #pragma mark - Screenview
+/*!
+ @discussion Requests that the framework logs an application context for load.
+ @param logicalPageName - Page name or title e.g. "Login View Controller"; Must not be empty.
+ @param referrer - Page name or title that loads logicalPageName. Could be empty.
+ @return Boolean value will return whether it was able to log the screenview event.
+ */
+RCT_EXPORT_METHOD(logScreenViewPageName:(NSString*)logicalPageName resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenViewPageName:logicalPageName]];
+    [self updateResult:result resolver:resolve rejecter:reject];
+}
+
 /*!
  @discussion Requests that the framework logs an application context for load.
  @param logicalPageName - Page name or title e.g. "Login View Controller"; Must not be empty.
@@ -258,12 +307,13 @@ RCT_EXPORT_METHOD(logScreenViewContextUnload:(NSString*)logicalPageName referrer
 /**
  @discussion Requests that the framework logs the layout of the screen
  @param name - Custom name to associate with the viewcontroller.
+ @param delay - number of seconds to wait before logging the view.
  @return Boolean value will return whether it was able to log the screen layout event.
  */
-RCT_EXPORT_METHOD(logScreenLayout:(NSString*)name resolver:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(logScreenLayout:(NSString*)name andDelay:(nonnull NSNumber *)delay resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_main_queue(), ^{
-        RCTLogInfo(@"logScreenLayout Name:%@", name);
+        RCTLogInfo(@"logScreenLayout Name:%@ with Delay:%@", name, delay);
         UIViewController *uv = nil;
         UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
         while (topController.presentedViewController) {
@@ -273,45 +323,16 @@ RCT_EXPORT_METHOD(logScreenLayout:(NSString*)name resolver:(RCTPromiseResolveBlo
             uv = topController;
         }
         
+        id result;
+        if (delay.floatValue <= 0) {
+            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andName:name]];
+        } else {
+            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andDelay:0.5 andName:name]];
+        }
         
-        id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andDelay:0.5 andName:name]];
         [self updateResult:result resolver:resolve rejecter:reject];
     });
 }
-
-///**
-// Requests that the framework logs the layout of the screen
-// @param viewController - UIViewController object whose layout needs to be logged.
-// @param views - Array of views that will be logged along with the provided viewController.
-// @param delay - number of seconds to wait before logging the view.
-// @param name - Custom name to associate with the view Controller
-// @return if the event was successfully logged or not.
-// */
-//RCT_EXPORT_METHOD(logScreenLayoutWithDelay:(NSString*)name andDelay:(nonnull NSNumber *)delay resolver:(RCTPromiseResolveBlock)resolve
-//                  rejecter:(RCTPromiseRejectBlock)reject) {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        UIViewController *uv = nil;
-//        UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-//        /* Why a loop ? Do we want to go all the way back in view hierarchy ? In anycase its an infinite loop
-//         This change was made for RTC 275353 : "Instrumentation :- Wrong background when we add items to the cart from the search category"
-//         */
-//        while (topController.presentedViewController) {
-//            topController = topController.presentedViewController;
-//        }
-//        if (topController) {
-//            uv = topController;
-//        }
-//
-//        id result;
-//        //UIViewController *uv = [self getDefaultVC:nil]; //[[TLFCustomEvent sharedInstance] getCurrentDidAppearViewController];
-//        //        if (delay.floatValue <= 0) {
-//        //            result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andName:name]];
-//        //        } else {
-//        result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenLayoutWithViewController:uv andDelay:0.5 andName:name]];
-//        //        }
-//        [self updateResult:result resolver:resolve rejecter:reject];
-//    });
-//}
 
 - (NSString*)testModuleName:(NSString*)moduleName {
     if ([moduleName caseInsensitiveCompare:@"Tealeaf"]) {

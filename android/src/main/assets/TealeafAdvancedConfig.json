@@ -12,7 +12,7 @@
   "DefaultTextViewPaddingRight": 5,
   "DefaultAutoLayoutDelay": 500,
   "ScreenViewUnloadDelay": 1000,
-  "GestureConfirmedScreenshotDelay": 300,
+  "GestureConfirmedScreenshotDelay": 100,
   "RemoveIp": false,
   "IpPlaceholder": "N/A",
   "UseZindex": false,
@@ -30,5 +30,10 @@
   "ColorAccent": "#FF4081",
   "EnableGestureSwipeLogScreen": true,
   "EnableScreenshotCache": true,
-  "FlushUpdatedPlaceHolders": true
+  "FlushUpdatedPlaceHolders": true,
+  "ClickEventEnabled": false,
+  "TouchEventEnabled": false,
+  "EditTextEnabled": false,
+  "ExtendsGoogleWebViewClient": false,
+  "GoogleWebViewEnabled": false
 }
