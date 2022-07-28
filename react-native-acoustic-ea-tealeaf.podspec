@@ -1,39 +1,40 @@
 require 'json'
 package = JSON.parse(File.read('package.json'))
+teaLeafConfig = JSON.parse(File.read('../../TealeafConfig.json'))
 repository = package["repository"]["url"]
+useRelease = teaLeafConfig["Tealeaf"]["useRelease"]
+dependencyName = useRelease ? 'TealeafReactNative' : 'TealeafReactNativeDebug'
+
+puts "*********react-native-acoustic-ea-tealeaf.podspec*********"
+puts "teaLeafConfig:"
+puts JSON.pretty_generate(teaLeafConfig)
+puts "repository:#{repository}"
+puts "useRelease:#{useRelease}"
+puts "dependencyName:#{dependencyName}"
+puts "***************************************************************"
 
 Pod::Spec.new do |s|
-  s.name		       = package["name"]
-  s.version	       = package["version"]
+  s.name           = package["name"]
+  s.version        = package["version"]
   s.description    = package["description"]
   s.homepage       = package["homepage"]
   s.summary        = package["summary"]
   s.license        = package["license"]
   s.authors        = package["author"]
-  s.platforms      = { :ios => "9.0" }
+  s.platforms      = { :ios => "10.0" }
   
   s.source         = { :git => repository, :tag => s.version }
   s.preserve_paths = 'README.md', 'package.json', '*.js'
   s.source_files   = "ios/**/*.{h,m}"
   
-  s.dependency        'React'
+  s.dependency       'React'
   s.xcconfig       = { 'HEADER_SEARCH_PATHS' => '../../../ios/Pods/** ' }
-	
-  s.default_subspec = 'Core'
-  s.subspec 'Core' do |core|
-	  core.frameworks = 'SystemConfiguration', 'CoreTelephony', 'CoreLocation', 'WebKit'
-	  core.library = 'z'
-	  core.resource = "ios/Tealeaf/TLFResources.bundle"
-	  core.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/ios/Tealeaf/Tealeaf.framework/Headers/"/** ' }
-	  core.vendored_frameworks = 'ios/Tealeaf/Tealeaf.framework'
-	  core.dependency 'EOCoreDebug', '2.3.185'
-  end
-  s.subspec 'MD5' do |md5|
-	  md5.dependency 'TealeafMD5Debug'
-	  md5.dependency 'IBMTealeafDebug/Core'
-  end
-  s.subspec 'SHA512' do |sha512|
-	  sha512.dependency 'TealeafSHA2Debug'
-	  sha512.dependency 'IBMTealeafDebug/Core'
-  end
+  s.dependency       dependencyName, '10.6.203'
+  s.script_phase = {
+    name: 'Build Config',
+    script: %(
+      "${PODS_TARGET_SRCROOT}/ios/TealeafConfig/Build_Config.rb" "$PODS_ROOT" "TealeafConfig.json"
+    ), 
+    execution_position: :before_compile,
+  }
 end

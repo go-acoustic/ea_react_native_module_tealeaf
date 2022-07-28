@@ -1,5 +1,5 @@
 /********************************************************************************************
-* Copyright (C) 2018 Acoustic, L.P. All rights reserved.
+* Copyright (C) 2022 Acoustic, L.P. All rights reserved.
 *
 * NOTICE: This file contains material that is confidential and proprietary to
 * Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -7,7 +7,8 @@
 * Acoustic, L.P. Any unauthorized copying or distribution of content from this file is
 * prohibited.
 ********************************************************************************************/
-import { NativeModules } from 'react-native';
 
-const Tealeaf = NativeModules.RNCxa;
-export default Tealeaf;
+
+export { default as Tealeaf } from './lib/components/TeaLeaf'
+export { default as TLTRN } from './lib/TLTRN'
+export { default as RNCxa } from './lib/RNCxa'

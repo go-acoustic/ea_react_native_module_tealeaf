@@ -1,0 +1,30 @@
+Bug Fixes
+
+- None.
+
+
+Improvements:
+
+- Control IDs now automatically captured and ingested 
+- Screenview names now automatically captured and ingested 
+- Clicks and changes now automatically captured and ingested
+- New minimal os is 10.0 from 9.0 for library.
+
+
+Our environment for this release:
+
+- Xcode 13.2.1
+- MacOS 11.6.1
+- iOS 12.x to 15.x
+- Supported architectures:
+	- simulator
+		- arm64
+		- x86_64
+	- device
+		- arm64
+
+
+Known Issues
+
+- After iOS 13, library no longer supports iPad because of Apple changes in iPad OS.
+- Dual sim features are in beta. Example information using multiple carriers.

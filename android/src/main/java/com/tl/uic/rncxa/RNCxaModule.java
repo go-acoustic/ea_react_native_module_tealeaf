@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2021 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2022 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -167,40 +167,15 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
     }
 
     /**
-     * Log Current Screen Layout using Javascript thread.
+     * Log Current Screen Layout using native side background thread.
      *
      * @param logicalPageName Page name or title e.g. "Login View Controller"; Must not be empty.
+     * @param delay           Number of seconds to wait before logging the view.
      * @param promise         Javascript Promise interface.
      */
     @ReactMethod
-    public void logScreenLayout(final String logicalPageName, final Promise promise) {
+    public void logScreenLayout(final String logicalPageName, final int delay, final Promise promise) {
         Tealeaf.logScreenview(getCurrentActivity(), logicalPageName, ScreenviewType.LOAD);
-        final boolean result = Tealeaf.logLayout(getCurrentActivity(), logicalPageName, false, true, true);
-        updateResult(result, promise);
-    }
-
-    /**
-     * Log Current Screen Layout using native side background thread.
-     *
-     * @param logicalPageName Page name or title e.g. "Login View Controller"; Must not be empty.
-     * @param delay           Number of seconds to wait before logging the view.
-     * @param promise         Javascript Promise interface.
-     */
-    @ReactMethod
-    public void logScreenLayout(final String logicalPageName, int delay, final Promise promise) {
-        final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
-        updateResult(result, promise);
-    }
-
-    /**
-     * Log Current Screen Layout using native side background thread.
-     *
-     * @param logicalPageName Page name or title e.g. "Login View Controller"; Must not be empty.
-     * @param delay           Number of seconds to wait before logging the view.
-     * @param promise         Javascript Promise interface.
-     */
-    @ReactMethod
-    public void logScreenLayoutWithDelay(final String logicalPageName, int delay, final Promise promise) {
         final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
         updateResult(result, promise);
     }
@@ -238,9 +213,10 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
      * Add focus listener to handle EditText UI control.
      *
      * @param textView Input TextView.
+     * @param accessibilityID Assessibility ID(virtual id).
      * @param activity Current activity.
      */
-    public void addFocusAndRegister(TextView textView, Activity activity) {
+    public void addFocusAndRegister(final TextView textView, final String accessibilityID, final Activity activity) {
         textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -249,15 +225,26 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
                     imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
 
                     KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
-                    Tealeaf.logEvent(keyboardView , Tealeaf.TLF_UI_KEYBOARD_DID_SHOW_NOTIFICATION);
-                    Tealeaf.logEvent(v, Tealeaf.TLF_ON_FOCUS_CHANGE_IN);
+
+                    if (TextUtils.isEmpty(accessibilityID)) {
+                        Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_SHOW_NOTIFICATION);
+                        Tealeaf.logEvent(v, Tealeaf.TLF_ON_FOCUS_CHANGE_IN);
+                    } else {
+                        Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_SHOW_NOTIFICATION, accessibilityID);
+                        Tealeaf.logEvent(v, Tealeaf.TLF_ON_FOCUS_CHANGE_IN, accessibilityID);
+                    }
                 } else {
                     com.tl.uic.Tealeaf.logEvent(v, com.tl.uic.Tealeaf.TLF_ON_FOCUS_CHANGE_OUT);
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
                     KeyboardView keyboardView = new KeyboardView(v.getContext().getApplicationContext(), null);
-                    Tealeaf.logEvent(keyboardView , Tealeaf.TLF_UI_KEYBOARD_DID_HIDE_NOTIFICATION);
+
+                    if (TextUtils.isEmpty(accessibilityID)) {
+                        Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_HIDE_NOTIFICATION);
+                    } else {
+                        Tealeaf.logEvent(keyboardView, Tealeaf.TLF_UI_KEYBOARD_DID_HIDE_NOTIFICATION, accessibilityID);
+                    }
                 }
             }
         });
@@ -269,9 +256,42 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
      * Requests that the framework logs the click events on any UIControl or View. Click event is a
      * normalized form of touch up inside event.
      *
-     * @param targetViewId A valid native View Id for lookup
+     * @param targetViewId A valid native View Id for lookup.
+     * @param accessibilityID Assessibility ID(virtual id).
      * @param promise      Javascript Promise interface.
      */
+    @ReactMethod
+    public void logClickEvent(final int targetViewId, final String accessibilityID, final Promise promise) {
+        try {
+            final ReactApplicationContext context = getReactApplicationContext();
+            // Add UI-block so we can get a valid reference to the map-view
+            final UIManagerModule uiManager = context.getNativeModule(UIManagerModule.class);
+
+            uiManager.addUIBlock(new UIBlock() {
+                public void execute(NativeViewHierarchyManager nvhm) {
+                    final View view = nvhm.resolveView(targetViewId);
+
+                    if (view == null) {
+                        updateResult(null, promise);
+                    } else {
+                        if (view instanceof EditText) {
+                            addFocusAndRegister((EditText) view, null, getCurrentActivity());
+                        } else {
+                            if (!TextUtils.isEmpty(accessibilityID)) {
+                                Tealeaf.logEvent(view, "click", accessibilityID);
+                            } else {
+                                Tealeaf.logEvent(view, "click");
+                            }
+                        }
+                        updateResult(true, promise);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            updateResult(e, promise);
+        }
+    }
+
     @ReactMethod
     public void logClickEvent(final int targetViewId, final Promise promise) {
         try {
@@ -286,11 +306,46 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
                     if (view == null) {
                         updateResult(null, promise);
                     } else {
-                        //
                         if (view instanceof EditText) {
-                            addFocusAndRegister((EditText) view, getCurrentActivity());
+                            addFocusAndRegister((EditText) view, null, getCurrentActivity());
                         } else {
                             Tealeaf.logEvent(view, "click");
+                        }
+                        updateResult(true, promise);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            updateResult(e, promise);
+        }
+    }
+
+    /**
+     * Log EditText change event.
+     *
+     * @param targetViewId A valid native View Id for lookup.
+     * @param accessibilityID Assessibility ID(virtual id).
+     * @param text The input string
+     * @param promise      Javascript Promise interface.
+     */
+    @ReactMethod
+    public void logTextChangeEvent(final int targetViewId, final String accessibilityID, final String text, final Promise promise) {
+        try {
+            final ReactApplicationContext context = getReactApplicationContext();
+            // Add UI-block so we can get a valid reference to the map-view
+            final UIManagerModule uiManager = context.getNativeModule(UIManagerModule.class);
+
+            uiManager.addUIBlock(new UIBlock() {
+                public void execute(NativeViewHierarchyManager nvhm) {
+                    final View view = nvhm.resolveView(targetViewId);
+
+                    if (view == null) {
+                        updateResult(null, promise);
+                    } else {
+                        if (view instanceof EditText && ((EditText) view).getOnFocusChangeListener() == null) {
+                            // First time, logEvent and subsequent calls will be handled in change listener
+                            Tealeaf.logEvent(view, Tealeaf.TLF_ON_FOCUS_CHANGE_IN, accessibilityID);
+                            addFocusAndRegister((EditText) view, accessibilityID, getCurrentActivity());
                         }
                         updateResult(true, promise);
                     }

@@ -1,33 +1,38 @@
 {
-  "name": "react-native-acoustic-ea-tealeaf",
-  "version": "12.13.0",
-  "description": "React native plugin for Acoustic Tealeaf",
-  "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react-native",
-    "ios",
-    "android",
-    "tealeaf",
-    "cxa",
-    "wxca",
-    "er",
-    "enhanced-replay"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf.git"
-  },
-  "author": "Acoustic, L.P., Omar Hernandez and Chang Jie Yang",
-  "license": "See license in https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/tree/master/Licenses/License",
-  "homepage": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf",
-  "peerDependencies": {
-    "react-native": "^0.63"
-  },
-  "dependencies": {
-    "react-native": "^0.63"
-  }
+    "author": "Acoustic, L.P., Omar Hernandez, Chang Jie Yang and Bryan Stevens",
+    "description": "React native plugin for Acoustic Tealeaf",
+    "devDependencies": {
+        "@prettier/plugin-xml": "^2.2.0",
+        "fast-xml-parser": "^4.0.8",
+        "prettier": "^2.7.1",
+        "prettier-plugin-java": "^1.6.2",
+        "react-native": "^0.60.0"
+    },
+    "homepage": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf",
+    "keywords": [
+        "react-native",
+        "ios",
+        "android",
+        "tealeaf",
+        "cxa",
+        "wxca",
+        "er",
+        "enhanced-replay"
+    ],
+    "license": "See license in Licenses/License",
+    "main": "index.js",
+    "name": "react-native-acoustic-ea-tealeaf",
+    "peerDependencies": {
+        "react-native": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf"
+    },
+    "scripts": {
+        "postinstall": "./scripts/postInstallScripts.sh",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
+    "version": "13.0.94"
 }
