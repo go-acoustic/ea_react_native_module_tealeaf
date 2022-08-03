@@ -14,7 +14,7 @@
         "react": "16.13.1",
         "react-dom": "16.13.1",
         "react-native": "0.63.4",
-        "react-native-acoustic-ea-tealeaf": "13.0.94",
+        "react-native-acoustic-ea-tealeaf": "13.0.97",
         "react-native-gesture-handler": "~1.10.2",
         "react-native-keyboard-aware-scroll-view": "^0.9.5",
         "react-native-reanimated": "~2.1.0",

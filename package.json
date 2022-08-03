@@ -1,32 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "react-native-acoustic-ea-tealeaf",
-  "version": "13.0.7",
-  "description": "React native plugin for Acoustic Tealeaf",
-  "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react-native",
-    "ios",
-    "android",
-    "tealeaf",
-    "cxa",
-    "wxca",
-    "er",
-    "enhanced-replay"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf.git"
-  },
-  "author": "Acoustic, L.P., Omar Hernandez and Chang Jie Yang",
-  "license": "See license in https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/tree/master/Licenses/License",
-  "homepage": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf"
-}
-=======
     "author": "Acoustic, L.P., Omar Hernandez, Chang Jie Yang and Bryan Stevens",
     "description": "React native plugin for Acoustic Tealeaf",
     "devDependencies": {
@@ -62,6 +34,5 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-    "version": "13.0.94"
+    "version": "13.0.97"
 }
->>>>>>> origin/master
