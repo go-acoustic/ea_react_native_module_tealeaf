@@ -1,12 +1,15 @@
 apply plugin: 'com.android.library'
 
 buildscript {
+    ext.kotlin_version = '1.6.10'
+
     repositories {
-        jcenter()
         google()
+        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.2'
     }
 }
 
@@ -15,7 +18,7 @@ android {
     buildToolsVersion '30.0.0'
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         // get version name from package.json version
@@ -28,16 +31,13 @@ android {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
+        mavenCentral()
+
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
-        }
-        maven {
-            // All of Tealeaf SDK libraries
-            // Might need to add to project's root gradle.build file
-            url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/master"
         }
     }
 }
@@ -46,7 +46,6 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     // Tealeaf SDK libraries
-    implementation 'com.ea:eocore:2.0.288'
-    // Allow Main app to reference Tealeaf library
-    api 'com.ea:tealeaf:10.3.274'
+    api 'io.github.acoustic-analytics:tealeaf:10.3.294'
+    implementation 'io.github.acoustic-analytics:eocore:2.0.295'
 }
