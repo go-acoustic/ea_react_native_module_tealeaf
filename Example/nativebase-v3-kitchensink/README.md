@@ -8,6 +8,8 @@ Here is a screenshot of the sample application:
 
 ![Screenshot of NativeBase](https://raw.githubusercontent.com/nativebase/kitchen-sink/master/assets/demo.png)
 
+Note: If you have already installed Node on your system, make sure it is Node 14 or newer.
+
 ## Running it on Android
 
 If you are on Android, you can run this in your `expo-go` app and scan the QR at this [link](https://expo.io/@geekyants/kitchensink-app-native-base).

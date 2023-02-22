@@ -171,7 +171,7 @@ export const Example = () => {
   ];
   return (
     <Box w="100%">
-      <FlatList
+      <FlatList horizontal
         data={icons}
         renderItem={({ item }) => (
           <VStack
@@ -188,7 +188,7 @@ export const Example = () => {
           </VStack>
         )}
         keyExtractor={(item) => item.iconName}
-        numColumns={cols}
+        //numColumns={cols}
       />
     </Box>
   );

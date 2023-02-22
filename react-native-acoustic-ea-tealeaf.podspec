@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.summary        = package["summary"]
   s.license        = package["license"]
   s.authors        = package["author"]
-  s.platforms      = { :ios => "10.0" }
+  s.platforms      = { :ios => "12.0" }
   
   s.source         = { :git => repository, :tag => s.version }
   s.preserve_paths = 'README.md', 'package.json', '*.js'
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   
   s.dependency       'React'
   s.xcconfig       = { 'HEADER_SEARCH_PATHS' => '../../../ios/Pods/** ' }
-  s.dependency       dependencyName, '10.6.203'
+  s.dependency       dependencyName, '10.6.251'
   s.script_phase = {
     name: 'Build Config',
     script: %(

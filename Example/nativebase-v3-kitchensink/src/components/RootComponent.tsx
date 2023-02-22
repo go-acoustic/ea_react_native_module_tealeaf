@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { Box, useColorModeValue, useToken } from 'native-base';
 import { RootStack } from '../../src/navigators/rootNavigator';
 import { Tealeaf } from 'react-native-acoustic-ea-tealeaf';
 import { useRef } from 'react';
+
+import { TLProfiler} from 'react-native-acoustic-ea-tealeaf';
 
 export const Root = () => {
   const navigationRef = useRef();
@@ -13,9 +15,9 @@ export const Root = () => {
     'blueGray.900'
   );
   const bgColor = useColorModeValue(lightBg, darkBg);
-
   return (
     <Tealeaf>
+      <TLProfiler profileName="Root">
       <NavigationContainer
         ref={navigationRef}
         theme={{
@@ -38,6 +40,7 @@ export const Root = () => {
           <RootStack />
         </Box>
       </NavigationContainer>
+      </TLProfiler>
     </Tealeaf>
   );
 };

@@ -13,23 +13,28 @@ if(!isValid(`${directoryPath}/android`)){
   exit(0)
 }
 
-const gradleCode = `mavenLocal()
+const gradleCode = `allprojects {
+    repositories {
         maven {
-            // All of Tealeaf SDK libraries
-                        url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/master"
-        }`
+        // All of Tealeaf SDK libraries
+            url "https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/master"
+        }
+        `
+
+const searchStrings = /(allprojects)\s*?({)\s*?(repositories)\s*?({)/g
 
 let gradleData = ''
 const filePath = `${directoryPath}/android/build.gradle`
 try {
-    gradleData = fs.readFileSync(filePath, 'utf8');
-    const re = new RegExp(/acoustic-analytics/, "g");
-    const found = re.test(gradleData);
-    if(!found){
-        gradleData = gradleData.replace("mavenLocal()",gradleCode)
-        fs.writeFileSync(filePath, gradleData);
-    }
-  
+  gradleData = fs.readFileSync(filePath, 'utf8');
+  const re = new RegExp(/acoustic-analytics/, "g");
+  const found = re.test(gradleData);
+  if(!found){
+      gradleData = gradleData.replace(searchStrings,gradleCode)
+      fs.writeFileSync(filePath, gradleData);
+  }
+
 } catch (err) {
   console.error(err);
 }
+

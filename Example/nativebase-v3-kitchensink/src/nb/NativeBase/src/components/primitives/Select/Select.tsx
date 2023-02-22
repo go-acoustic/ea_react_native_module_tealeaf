@@ -226,7 +226,7 @@ const Select = (
         <Actionsheet.Content {..._actionSheetContent}>
           {/* TODO: Replace ScrollVeiw with FlatList */}
           {optimized ? (
-            <FlatList
+            <FlatList horizontal
               {..._actionSheetBody}
               data={flatListData}
               // eslint-disable-next-line no-shadow
