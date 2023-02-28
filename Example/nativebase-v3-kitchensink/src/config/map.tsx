@@ -40,6 +40,24 @@ export const mapping = {
       },
     ],
   },
+  ErrorTest: {
+    title: "ErrorTest",
+    description: "",
+    doclink: "https://docs.nativebase.io/action-sheet",
+    basic: require("../components/NativeBaseComponents/ErrorTest"),
+    components: [
+      {
+        component: require("../nb/components/composites/ErrorTest/EventError"),
+        title: "Event Error",
+        description: "",
+      },
+      {
+        component: require("../nb/components/composites/ErrorTest/UIError"),
+        title: "UI Error",
+        description: "",
+      }
+    ],
+  },
   Alert: {
     title: "Alert",
     description: "",

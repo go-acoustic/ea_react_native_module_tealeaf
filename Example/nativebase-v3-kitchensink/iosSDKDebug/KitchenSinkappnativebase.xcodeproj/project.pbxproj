@@ -38,8 +38,8 @@
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-KitchenSinkappnativebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KitchenSinkappnativebase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-KitchenSinkappnativebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-KitchenSinkappnativebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.release.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.release.xcconfig"; sourceTree = "<group>"; };
-		99F4712D28499E9600558430 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../ios/KitchenSinkappnativebase/AppDelegate.m; sourceTree = "<group>"; };
-		99F4712E28499E9600558430 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../ios/KitchenSinkappnativebase/main.m; sourceTree = "<group>"; };
+		99F4712D28499E9600558430 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.m; path = ../ios/KitchenSinkappnativebase/AppDelegate.m; sourceTree = "<group>"; };
+		99F4712E28499E9600558430 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = main.m; path = ../ios/KitchenSinkappnativebase/main.m; sourceTree = "<group>"; };
 		99F4713128499F2E00558430 /* Expo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Expo.plist; path = ../ios/KitchenSinkappnativebase/Supporting/Expo.plist; sourceTree = "<group>"; };
 		99F4713228499F2E00558430 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../ios/KitchenSinkappnativebase/Images.xcassets; sourceTree = "<group>"; };
 		99F4713328499F2E00558430 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = ../ios/KitchenSinkappnativebase/SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n../node_modules/expo-constants/scripts/get-app-config-ios.sh\n../node_modules/expo-updates/scripts/create-manifest-ios.sh\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n../node_modules/expo-constants/scripts/get-app-config-ios.sh\n";
 		};
 		08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

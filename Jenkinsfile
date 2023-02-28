@@ -184,9 +184,10 @@ import java.text.SimpleDateFormat
 @Field def genBuild  = true
 
 // Test platform
-@Field def platform     = "iOS Simulator,name=iPhone 13,OS=15.5"
-@Field def platformName = platform.replaceAll(/\s|,|=|\./, "_")
-@Field def emulatorId   = ""
+@Field def platform       = "iOS Simulator,name=iPhone 14 Plus,OS=16.0"
+@Field def platformName   = platform.replaceAll(/\s|,|=|\./, "_")
+@Field def platformLatest = "16.0"
+@Field def emulatorId     = ""
 
 def createBuild(findText) {
     def resullt = hasTextBasedOnLastCommit(findText)
@@ -196,6 +197,9 @@ def createBuild(findText) {
     } else {
         genBuild = true
     }
+    
+    platformLatest = runCMD("xcrun simctl list | grep -w \"\\-\\- iOS\" | tail -1 | sed -r 's/[--]+//g' | sed -r 's/[iOS ]+//g' ")
+    platform = "iOS Simulator,name=iPhone 14 Plus,OS=${platformLatest}"
 }
 
 def runIosTests(isJustBuild, runSonarQube) {
@@ -241,7 +245,7 @@ def podUpdate() {
     echo "Fix and install cocopods dependancies for workspace"
     runCMD("cd ${testAppDir} && yarn")
     runCMD("cd ${testAppDir}/ios && pod update")
-    runCMD("cd ${testAppDir}/ios && pod install")
+    // runCMD("cd ${testAppDir}/ios && pod install")
 }
 def killIosSim() {
     echo "Kill iOS Simulator"

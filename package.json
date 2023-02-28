@@ -6,7 +6,7 @@
         "fast-xml-parser": "^4.0.8",
         "prettier": "^2.7.1",
         "prettier-plugin-java": "^1.6.2",
-        "react-native": "^0.60.0"
+        "react-native": "^0.70.6"
     },
     "homepage": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf",
     "keywords": [
@@ -34,5 +34,5 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-    "version": "13.0.97"
+    "version": "14.0.4"
 }

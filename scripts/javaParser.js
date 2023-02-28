@@ -33,7 +33,11 @@ try {
 
 const jsonObj = parser.parse(xmlData);
 
-const upperJavaPath = jsonObj["manifest"]["@_package"].replace(/\./g, "/");
+const packageName = jsonObj["manifest"]["@_package"];
+
+const upperJavaPath = packageName.replace(/\./g, "/");
+
+const upperJavaCode =  `package ${packageName};`;
 
 const filePath = `${directoryPath}/android/app/src/main/java/${upperJavaPath}/MainActivity.java`;
 
@@ -49,7 +53,12 @@ const javaCode = `public boolean dispatchTouchEvent(MotionEvent e) {
                     return super.dispatchTouchEvent(e);
                 }`;
 
+
+const javaCode2 =`${upperJavaCode}\nimport com.tl.uic.Tealeaf;`
+
 const re = new RegExp(/dispatchTouchEvent/, "g");
+
+const re2 = new RegExp("import com.tl.uic.Tealeaf", "g");
 
 const found = re.test(javaData);
 
@@ -61,6 +70,14 @@ if (!found) {
   });
 
   result = `${result.substring(0, result.length - 2)}${javaCode} }`;
+
+
+  const found2 = re2.test(result);
+
+  if(!found2){
+    result = result.replace(upperJavaCode,javaCode2); 
+  }
+
 
   result = prettier.format(result, {
     parser: "java",

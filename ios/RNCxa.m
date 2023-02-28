@@ -289,7 +289,8 @@ RCT_EXPORT_METHOD(logScreenViewPageName:(NSString*)logicalPageName resolver:(RCT
  @return Boolean value will return whether it was able to log the screenview event.
  */
 RCT_EXPORT_METHOD(logScreenViewContextLoad:(NSString*)logicalPageName referrer:(NSString*)referrer resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenViewContext:logicalPageName applicationContext:TLFScreenViewTypeLoad referrer:referrer]];
+    NSString *cllasss = logicalPageName == nil ? @"ReactNative" : [NSString stringWithFormat:@"ReactNative_%@", logicalPageName];
+    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenViewContext:logicalPageName withClass:cllasss  applicationContext:TLFScreenViewTypeLoad referrer:referrer]];
     [self updateResult:result resolver:resolve rejecter:reject];
 }
 
@@ -300,7 +301,8 @@ RCT_EXPORT_METHOD(logScreenViewContextLoad:(NSString*)logicalPageName referrer:(
  @return Boolean value will return whether it was able to log the screenview event.
  */
 RCT_EXPORT_METHOD(logScreenViewContextUnload:(NSString*)logicalPageName referrer:(NSString*)referrer resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenViewContext:logicalPageName applicationContext:TLFScreenViewTypeUnload referrer:referrer]];
+    NSString *cllasss = logicalPageName == nil ? @"ReactNative" : [NSString stringWithFormat:@"ReactNative_%@", logicalPageName];
+    id result = [NSNumber numberWithBool:[[TLFCustomEvent sharedInstance] logScreenViewContext:logicalPageName withClass:cllasss applicationContext:TLFScreenViewTypeUnload referrer:referrer]];
     [self updateResult:result resolver:resolve rejecter:reject];
 }
 

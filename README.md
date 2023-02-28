@@ -5,6 +5,8 @@
 ---
 react-native-acoustic-ea-tealeaf version 13.0.0 and up is only compatible with react native 0.60 and up. If you are not yet upgraded to react native 0.60 or above, you should remain on react-native-acoustic-ea-tealeaf version 12.12.0.
 
+If you have already installed Node on your system, make sure it is Node 14 or newer.
+
 ----
 
 [Overview](https://developer.goacoustic.com/acoustic-exp-analytics/docs/tl-reactnative-sdk-overview)

@@ -34,6 +34,18 @@ export function MasonLayout({
         >
           <StoryBook
             navigation={navigation}
+            name="ErrorTest"
+            minH={32}
+            _box={{
+              lightGrad: ["cyan.400", "teal.200"],
+              darkGrad: ["cyan.600", "teal.300"],
+            }}
+            _heading={{
+              color: "amber.100",
+            }}
+          />
+          <StoryBook
+            navigation={navigation}
             name="Actionsheet"
             minH={32}
             _box={{

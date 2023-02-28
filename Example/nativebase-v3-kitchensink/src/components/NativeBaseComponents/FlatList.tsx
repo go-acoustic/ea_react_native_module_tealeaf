@@ -18,7 +18,7 @@ export const Example = () => {
   ];
 
   return (
-    <FlatList
+    <FlatList horizontal
       mt={6}
       data={data}
       renderItem={({ item }) => (

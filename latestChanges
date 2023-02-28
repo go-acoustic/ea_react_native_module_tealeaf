@@ -5,16 +5,14 @@ Bug Fixes
 
 Improvements:
 
-- Control IDs now automatically captured and ingested 
-- Screenview names now automatically captured and ingested 
-- Clicks and changes now automatically captured and ingested
-- New minimal os is 10.0 from 9.0 for library.
+- Use latest library for Tealeaf iOS - 10.6.244
+- New minimal os is 12.0 from 10.0 for library.
 
 
 Our environment for this release:
 
-- Xcode 13.2.1
-- MacOS 11.6.1
+- Xcode 14.2
+- MacOS 13.2
 - iOS 12.x to 15.x
 - Supported architectures:
 	- simulator
@@ -28,3 +26,4 @@ Known Issues
 
 - After iOS 13, library no longer supports iPad because of Apple changes in iPad OS.
 - Dual sim features are in beta. Example information using multiple carriers.
+
