@@ -1,12 +1,11 @@
 Bug Fixes
 
-- None.
+- Noticed that iOS was not capturing pages correctly. Logic has changed for screen capture.
 
 
 Improvements:
 
-- Use latest library for Tealeaf iOS - 10.6.244
-- New minimal os is 12.0 from 10.0 for library.
+- None.
 
 
 Our environment for this release:

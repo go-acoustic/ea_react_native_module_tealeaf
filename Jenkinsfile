@@ -203,7 +203,7 @@ def createBuild(findText) {
 }
 
 def runIosTests(isJustBuild, runSonarQube) {
-    String xcodebuildCMD   = "xcrun"
+    String xcodebuildCMD   = "arch -x86_64 xcrun"
     String workspacePath   = "${testAppDir}/ios/KitchenSinkappnativebase.xcworkspace"
     String sonarWrapperDir = "${testAppDir}/ios/build_wrapper_output_directory"
     
