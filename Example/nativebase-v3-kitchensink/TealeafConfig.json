@@ -15,19 +15,33 @@
           "CaptureUserEvents": true,
           "CaptureScreenVisits": false,
           "CaptureLayoutOn": 2,
-          "CaptureScreenshotOn": 2,
-          "Masking": {
-            "HasMasking": true,
-            "HasCustomMask": true,
-            "Sensitive": {
-              "capitalCaseAlphabet": "X",
-              "number": "9",
-              "smallCaseAlphabet": "x",
-              "symbol": "#"
-            },
-            "MaskIdList": [],
-            "MaskValueList": []
-          }
+          "CaptureScreenshotOn": 2
+        }
+      },
+      "MainActivity": {
+        "ScreenChange": true,
+        "DisplayName": "Home",
+        "CaptureLayoutOn": 2,
+        "Masking": {
+          "HasMasking": true,
+          "HasCustomMask": true,
+          "Sensitive": {
+            "capitalCaseAlphabet": "X",
+            "number": "9",
+            "smallCaseAlphabet": "x",
+            "symbol": "#"
+          },
+          "MaskIdList": [
+          ],
+          "MaskValueList": [
+          ],
+          "MaskAccessibilityIdList": [
+          ],
+          "MaskAccessibilityLabelList": [
+            "Masking",
+            "Test Masking",
+            "password"
+          ]
         }
       },
       "AppendMapIds": {

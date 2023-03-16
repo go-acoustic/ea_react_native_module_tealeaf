@@ -44,6 +44,6 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     // Tealeaf SDK libraries
-    api 'io.github.acoustic-analytics:tealeaf:10.3.294'
-    implementation 'io.github.acoustic-analytics:eocore:2.0.295'
+    api 'io.github.acoustic-analytics:tealeaf:+'
+    implementation 'io.github.acoustic-analytics:eocore:+'
 }
