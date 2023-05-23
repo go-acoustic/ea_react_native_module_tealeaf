@@ -4,6 +4,8 @@ teaLeafConfig = JSON.parse(File.read('../../TealeafConfig.json'))
 repository = package["repository"]["url"]
 useRelease = teaLeafConfig["Tealeaf"]["useRelease"]
 dependencyName = useRelease ? 'TealeafReactNative' : 'TealeafReactNativeDebug'
+iOSVersion = teaLeafConfig["Tealeaf"]["iOSVersion"]
+dependencyVersion = iOSVersion.to_s.empty? ? "" : ", '#{iOSVersion}'"
 
 puts "*********react-native-acoustic-ea-tealeaf.podspec*********"
 puts "teaLeafConfig:"
@@ -11,6 +13,8 @@ puts JSON.pretty_generate(teaLeafConfig)
 puts "repository:#{repository}"
 puts "useRelease:#{useRelease}"
 puts "dependencyName:#{dependencyName}"
+puts "dependencyVersion:#{dependencyVersion}"
+puts "tlDependency:#{dependencyName}#{dependencyVersion}"
 puts "***************************************************************"
 
 Pod::Spec.new do |s|
@@ -29,7 +33,7 @@ Pod::Spec.new do |s|
   
   s.dependency       'React'
   s.xcconfig       = { 'HEADER_SEARCH_PATHS' => '../../../ios/Pods/** ' }
-  s.dependency       dependencyName, '10.6.251'
+  s.dependency       "#{dependencyName}#{dependencyVersion}"
   s.script_phase = {
     name: 'Build Config',
     script: %(

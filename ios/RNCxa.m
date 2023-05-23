@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2023 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -31,6 +31,7 @@
     [[EOApplicationHelper sharedInstance] setConfigItem:kConfigurableItemSetGestureDetector value:@"false" forModuleName:@"Tealeaf"];
     [[EOApplicationHelper sharedInstance] setConfigItem:kConfigurableItemLogViewLayoutOnScreenTransition value:@"false" forModuleName:@"Tealeaf"];
     [[TLFApplicationHelper sharedInstance] enableTealeafFramework];
+    [[TLFApplicationHelper sharedInstance] isReactNative:YES];
 }
 @end
 
@@ -271,6 +272,16 @@ RCT_EXPORT_METHOD(logTextChangeEvent:(nonnull NSNumber *)target controlId:(NSStr
 }
 
 #pragma mark - Screenview
+/*!
+ @discussion Requests that the framework save the current  application page name.
+ @param logicalPageName - Page name or title e.g. "Login View Controller"; Must not be empty.
+ @return Boolean value will return whether it was able to log the screenview event.
+ */
+RCT_EXPORT_METHOD(setCurrentScreenName:(NSString*)logicalPageName resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    id result = [NSNumber numberWithBool:[[TLFApplicationHelper sharedInstance] resumeTealeaf:logicalPageName]];
+    [self updateResult:result resolver:resolve rejecter:reject];
+}
+
 /*!
  @discussion Requests that the framework logs an application context for load.
  @param logicalPageName - Page name or title e.g. "Login View Controller"; Must not be empty.

@@ -17,7 +17,6 @@ export const Root = () => {
   const bgColor = useColorModeValue(lightBg, darkBg);
   return (
     <Tealeaf>
-      <TLProfiler profileName="Root">
       <NavigationContainer
         ref={navigationRef}
         theme={{
@@ -40,7 +39,6 @@ export const Root = () => {
           <RootStack />
         </Box>
       </NavigationContainer>
-      </TLProfiler>
     </Tealeaf>
   );
 };

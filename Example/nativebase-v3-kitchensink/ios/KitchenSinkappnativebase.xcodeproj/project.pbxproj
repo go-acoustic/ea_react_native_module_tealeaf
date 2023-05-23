@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01C5E56445A75711D41CED4F /* libPods-KitchenSinkappnativebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D376C8B2B676B71124517486 /* libPods-KitchenSinkappnativebase.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		297B7ACC0EF508B359757C84 /* libPods-KitchenSinkappnativebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 831A8137764ACEC311962290 /* libPods-KitchenSinkappnativebase.a */; };
+		231543DBEC1643F1B8C275CF /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF043343BA46B690BFE418 /* noop-file.swift */; };
 		3DA35E8634E7316FF6BB3B55 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09D7362E6D3FFAB70A0B62 /* ExpoModulesProvider.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
@@ -19,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		0E57979DDC50E80236529B47 /* Pods-KitchenSinkappnativebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* kitchensinkappnativebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitchensinkappnativebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KitchenSinkappnativebase/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.m; path = KitchenSinkappnativebase/AppDelegate.m; sourceTree = "<group>"; };
@@ -27,13 +27,16 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KitchenSinkappnativebase/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KitchenSinkappnativebase/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.m; path = KitchenSinkappnativebase/main.m; sourceTree = "<group>"; };
-		831A8137764ACEC311962290 /* libPods-KitchenSinkappnativebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KitchenSinkappnativebase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27DF043343BA46B690BFE418 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "KitchenSinkappnativebase/noop-file.swift"; sourceTree = "<group>"; };
+		3C08FBD2EFD89926678ABDE0 /* Pods-KitchenSinkappnativebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.debug.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.debug.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = KitchenSinkappnativebase/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		CF09D7362E6D3FFAB70A0B62 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-KitchenSinkappnativebase/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		D376C8B2B676B71124517486 /* libPods-KitchenSinkappnativebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KitchenSinkappnativebase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D508042AF4DEBAB093F02B32 /* Pods-KitchenSinkappnativebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.release.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F6F9F30812301B016076E6CF /* Pods-KitchenSinkappnativebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenSinkappnativebase.release.xcconfig"; path = "Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase.release.xcconfig"; sourceTree = "<group>"; };
+		F15B9492E9F5478AA9495FA3 /* KitchenSinkappnativebase-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "KitchenSinkappnativebase-Bridging-Header.h"; path = "KitchenSinkappnativebase/KitchenSinkappnativebase-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				297B7ACC0EF508B359757C84 /* libPods-KitchenSinkappnativebase.a in Frameworks */,
+				01C5E56445A75711D41CED4F /* libPods-KitchenSinkappnativebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,8 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
+				27DF043343BA46B690BFE418 /* noop-file.swift */,
+				F15B9492E9F5478AA9495FA3 /* KitchenSinkappnativebase-Bridging-Header.h */,
 			);
 			name = KitchenSinkappnativebase;
 			sourceTree = "<group>";
@@ -77,7 +82,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				831A8137764ACEC311962290 /* libPods-KitchenSinkappnativebase.a */,
+				D376C8B2B676B71124517486 /* libPods-KitchenSinkappnativebase.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,8 +129,8 @@
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0E57979DDC50E80236529B47 /* Pods-KitchenSinkappnativebase.debug.xcconfig */,
-				F6F9F30812301B016076E6CF /* Pods-KitchenSinkappnativebase.release.xcconfig */,
+				3C08FBD2EFD89926678ABDE0 /* Pods-KitchenSinkappnativebase.debug.xcconfig */,
+				D508042AF4DEBAB093F02B32 /* Pods-KitchenSinkappnativebase.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -145,14 +150,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KitchenSinkappnativebase" */;
 			buildPhases = (
-				61510EE8251DA74603E858D7 /* [CP] Check Pods Manifest.lock */,
+				75E806DFDDDFE81B9017C7A2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				F383E2AADFC76714DDFC9A1D /* [CP] Copy Pods Resources */,
-				4D6252571CFF911FFFE5467C /* [CP] Embed Pods Frameworks */,
+				51F55BE134F65C05C2BF16AA /* [CP] Embed Pods Frameworks */,
+				307478C9831A11B2D25DCFDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,49 +228,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n../node_modules/expo-constants/scripts/get-app-config-ios.sh\n";
 		};
-		4D6252571CFF911FFFE5467C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/EOCoreDebug/EOCore.framework/EOCore",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TealeafReactNativeDebug/Core/TealeafReactNative.framework/TealeafReactNative",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EOCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TealeafReactNative.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61510EE8251DA74603E858D7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KitchenSinkappnativebase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F383E2AADFC76714DDFC9A1D /* [CP] Copy Pods Resources */ = {
+		307478C9831A11B2D25DCFDA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,6 +250,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51F55BE134F65C05C2BF16AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/EOCoreDebug/EOCore.framework/EOCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TealeafReactNativeDebug/Core/TealeafReactNative.framework/TealeafReactNative",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EOCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TealeafReactNative.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KitchenSinkappnativebase/Pods-KitchenSinkappnativebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75E806DFDDDFE81B9017C7A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KitchenSinkappnativebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -318,6 +323,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				3DA35E8634E7316FF6BB3B55 /* ExpoModulesProvider.swift in Sources */,
+				231543DBEC1643F1B8C275CF /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +344,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E57979DDC50E80236529B47 /* Pods-KitchenSinkappnativebase.debug.xcconfig */;
+			baseConfigurationReference = 3C08FBD2EFD89926678ABDE0 /* Pods-KitchenSinkappnativebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -362,7 +368,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekyants.kitchensinkappnativebase;
-				PRODUCT_NAME = kitchensinkappnativebase;
+				PRODUCT_NAME = KitchenSinkappnativebase;
+				SWIFT_OBJC_BRIDGING_HEADER = "KitchenSinkappnativebase/KitchenSinkappnativebase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,7 +379,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6F9F30812301B016076E6CF /* Pods-KitchenSinkappnativebase.release.xcconfig */;
+			baseConfigurationReference = D508042AF4DEBAB093F02B32 /* Pods-KitchenSinkappnativebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -383,7 +390,7 @@
 				INFOPLIST_FILE = KitchenSinkappnativebase/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -391,7 +398,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekyants.kitchensinkappnativebase;
-				PRODUCT_NAME = kitchensinkappnativebase;
+				PRODUCT_NAME = KitchenSinkappnativebase;
+				SWIFT_OBJC_BRIDGING_HEADER = "KitchenSinkappnativebase/KitchenSinkappnativebase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

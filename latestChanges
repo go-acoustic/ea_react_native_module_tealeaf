@@ -1,11 +1,12 @@
 Bug Fixes
 
-- Noticed that iOS was not capturing pages correctly. Logic has changed for screen capture.
+- None.
 
 
 Improvements:
 
-- None.
+- Add ability to keep track of current page name for react native.
+- Fixed extra screenviews due to changes to now using webview versus converting to native controls.
 
 
 Our environment for this release:
@@ -25,4 +26,4 @@ Known Issues
 
 - After iOS 13, library no longer supports iPad because of Apple changes in iPad OS.
 - Dual sim features are in beta. Example information using multiple carriers.
-
+       

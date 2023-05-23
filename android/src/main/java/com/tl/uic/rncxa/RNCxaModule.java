@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+// Copyright (C) 2023 Acoustic, L.P. All rights reserved.
 //
 // NOTICE: This file contains material that is confidential and proprietary to
 // Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -60,6 +60,19 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
         return "RNCxa";
     }
 
+    /**
+     * Requests that the framework save the current application page name.
+     *
+     * @param logicalPageName Page name or title e.g. "Login View Controller"; Must not be empty.
+     * @param promise         Javascript Promise interface.
+     */
+    @ReactMethod
+    public void setCurrentScreenName(final String logicalPageName, final Promise promise) {
+        boolean result =
+                Tealeaf.resumeTealeaf(true) && Tealeaf.logScreenview(getCurrentActivity(),
+                        logicalPageName, ScreenviewType.VISIT);
+        updateResult(result, promise);
+    }
 
     /**
      * @param readableMap
