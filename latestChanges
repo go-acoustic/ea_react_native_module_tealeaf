@@ -5,6 +5,7 @@ Bug Fixes
 
 Improvements:
 
+- Update to be used with Quickstart.
 - Add ability to keep track of current page name for react native.
 - Fixed extra screenviews due to changes to now using webview versus converting to native controls.
 
