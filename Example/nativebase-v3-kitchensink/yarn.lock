@@ -8422,10 +8422,10 @@ react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
 
-react-native-acoustic-ea-tealeaf@15.0.4:
-  version "15.0.4"
-  resolved "https://registry.yarnpkg.com/react-native-acoustic-ea-tealeaf/-/react-native-acoustic-ea-tealeaf-15.0.4.tgz#729229ff2416d2d4c8af2a830269b68f8bb3ccbf"
-  integrity sha512-uH3Mk58o/enWpxMW6nPH9swD5zcPu9WzdSz/VWTPvsJ9zfFCVPzo9P01FtQa0mbo2E0LevthBvmKU56bBN7ReA==
+react-native-acoustic-ea-tealeaf@15.0.5:
+  version "15.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-acoustic-ea-tealeaf/-/react-native-acoustic-ea-tealeaf-15.0.5.tgz#7a072c53a656dc90b5eeb72abd8adf8e69fba5d5"
+  integrity sha512-+fEXgE9fJj6R4dzYoYpmYWEjqJEXuLfKSw046CP1KaWNwE14mZbI7tH306mTmBDv+37kBjapSUJ38yso/ogBKg==
 
 react-native-codegen@^0.70.6:
   version "0.70.6"
@@ -10031,8 +10031,9 @@ wonka@^6.1.2:
   resolved "https://registry.yarnpkg.com/wonka/-/wonka-6.1.2.tgz#2c66fa5b26a12f002a03619b988258313d0b5352"
 
 word-wrap@~1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
+  integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
 wrap-ansi@^6.2.0:
   version "6.2.0"
