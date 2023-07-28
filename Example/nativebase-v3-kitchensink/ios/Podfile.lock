@@ -241,7 +241,7 @@ PODS:
   - React-jsinspector (0.70.8)
   - React-logger (0.70.8):
     - glog
-  - react-native-acoustic-ea-tealeaf (14.0.21):
+  - react-native-acoustic-ea-tealeaf (15.0.3):
     - React
     - TealeafReactNativeDebug
   - react-native-safe-area-context (3.2.0):
@@ -539,7 +539,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: bc8556d76f83a1a9075cdee207aad7c0b7b30a33
   React-jsinspector: 5e5497c844f2381e8648ec3a7d0ad25b3f27f23e
   React-logger: b277ad8f4473f2506fb30b762b6348534a3de10e
-  react-native-acoustic-ea-tealeaf: 20961d4b90a23a01e037a5ba8acbb44487f16b52
+  react-native-acoustic-ea-tealeaf: 01d35ed1dd9707f37c6503557d9e9aeb2e69d7b4
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-perflogger: e9249a18e055cae96fdf685bf6145cbea62506c8
   React-RCTActionSheet: a6d2a544a4605a111ce80fa9319cc870ca3ea778

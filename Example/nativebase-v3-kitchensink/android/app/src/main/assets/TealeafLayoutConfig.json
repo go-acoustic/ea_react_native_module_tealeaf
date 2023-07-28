@@ -1,0 +1,64 @@
+{
+  "AutoLayout": {
+    "GlobalScreenSettings": {
+      "ScreenChange": true,
+      "DisplayName": "Default name",
+      "CaptureLayoutDelay": 500,
+      "ScreenShot": true,
+      "NumberOfWebViews": 0,
+      "CaptureUserEvents": true,
+      "CaptureScreenVisits": true,
+      "CaptureLayoutOn": 2,
+      "CaptureScreenshotOn": 2
+    },
+    "MainActivity": {
+      "ScreenChange": true,
+      "DisplayName": "Home",
+      "CaptureLayoutOn": 2,
+      "Masking": {
+        "HasMasking": true,
+        "HasCustomMask": true,
+        "Sensitive": {
+          "capitalCaseAlphabet": "X",
+          "number": "9",
+          "smallCaseAlphabet": "x",
+          "symbol": "#"
+        },
+        "MaskIdList": [],
+        "MaskValueList": [],
+        "MaskAccessibilityIdList": [],
+        "MaskAccessibilityLabelList": [
+          "Masking",
+          "Test Masking",
+          "password"
+        ]
+      }
+    },
+    "Button": {
+      "ScreenChange": true,
+      "DisplayName": "Visible",
+      "CaptureLayoutDelay": 500,
+      "ScreenShot": true,
+      "NumberOfWebViews": 0,
+      "CaptureUserEvents": true,
+      "CaptureScreenVisits": true,
+      "CaptureLayoutOn": 2,
+      "CaptureScreenshotOn": 2
+    },
+    "ZStack": {
+      "ScreenChange": false,
+      "DisplayName": "Hidden"
+    }
+  },
+  "AppendMapIds": {
+    "[w,9290],[v,0]": {
+      "mid": "ASimpleUIView"
+    },
+    "tag2999999": {
+      "mid": "giveAdditionalId1"
+    },
+    "idxPathValue": {
+      "mid": "giveAdditionalId2"
+    }
+  }
+}

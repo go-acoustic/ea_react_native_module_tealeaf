@@ -10,7 +10,8 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        }
+    }
+
     dependencies {
         classpath("com.android.tools.build:gradle:7.2.1")
         //classpath("com.facebook.react:react-native-gradle-plugin")
@@ -24,8 +25,7 @@ buildscript {
 def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
 
 allprojects {
-    repositories {
-        
+    repositories {   
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url(new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), "../android"))
@@ -36,6 +36,7 @@ allprojects {
         }
 
         google()
+
         mavenCentral {
             // We don't want to fetch react-native from Maven Central as there are
             // older versions over there.
@@ -44,12 +45,5 @@ allprojects {
             }
         }
         maven { url 'https://www.jitpack.io' }
-
-        //maven {
-        // All of Tealeaf SDK libraries
-        // Might need to add to project's root gradle.build file
-
-        //    url "https://s01.oss.sonatype.org/content/groups/staging"
-        //}
     }
 }

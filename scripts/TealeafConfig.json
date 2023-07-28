@@ -1,72 +1,94 @@
 {
-    "Tealeaf": {
-        "AppKey": "b6c3709b7a4c479bb4b5a9fb8fec324c", 
-        "PostMessageUrl": "https://lib-us-2.brilliantcollector.com/collector/collectorPost", 
-        "KillSwitchUrl": "https://lib-us-2.brilliantcollector.com/collector/switch/b6c3709b7a4c479bb4b5a9fb8fec324c", 
-        "useRelease": false, 
-        "iOSVersion": "",
-        "layoutConfig": {
-            "AutoLayout": {
-                "GlobalScreenSettings": {
-                    "ScreenChange": true, 
-                    "DisplayName": "Example", 
-                    "CaptureLayoutDelay": 500, 
-                    "ScreenShot": true, 
-                    "NumberOfWebViews": 0, 
-                    "CaptureUserEvents": true, 
-                    "CaptureScreenVisits": false, 
-                    "CaptureLayoutOn": 2, 
-                    "CaptureScreenshotOn": 2, 
-                    "Masking": {
-                        "HasMasking": true, 
-                        "HasCustomMask": true, 
-                        "Sensitive": {
-                            "capitalCaseAlphabet": "X", 
-                            "number": "9", 
-                            "smallCaseAlphabet": "x", 
-                            "symbol": "#"
-                        }, 
-                        "MaskIdList": [ ], 
-                        "MaskValueList": [ ]
-                    }
-                }
-            }, 
-            "MainActivity": {
-                "ScreenChange": true, 
-                "DisplayName": "LoginActivity", 
-                "CaptureLayoutOn": 2, 
-                "Masking": {
-                    "HasMasking": true, 
-                    "HasCustomMask": true, 
-                    "Sensitive": {
-                        "capitalCaseAlphabet": "X", 
-                        "number": "9", 
-                        "smallCaseAlphabet": "x", 
-                        "symbol": "#"
-                    }, 
-                    "MaskIdList": [
-                        "password"
-                    ], 
-                    "MaskValueList": [ ], 
-                    "MaskAccessibilityIdList": [ ], 
-                    "MaskAccessibilityLabelList": [
-                        "Masking", 
-                        "Test Masking", 
-                        "password"
-                    ]
-                }
-            }, 
-            "AppendMapIds": {
-                "[w,9290],[v,0]": {
-                    "mid": "ASimpleUIView"
-                }, 
-                "tag2999999": {
-                    "mid": "giveAdditionalId1"
-                }, 
-                "idxPathValue": {
-                    "mid": "giveAdditionalId2"
-                }
-            }
+  "Tealeaf": {
+    "AppKey": "b6c3709b7a4c479bb4b5a9fb8fec324c",
+    "PostMessageUrl": "https://lib-us-2.brilliantcollector.com/collector/collectorPost",
+    "KillSwitchUrl": "https://lib-us-2.brilliantcollector.com/collector/switch/b6c3709b7a4c479bb4b5a9fb8fec324c",
+    "useRelease": false,
+    "iOSVersion": "",
+    "layoutConfig": {
+      "AutoLayout": {
+        "GlobalScreenSettings": {
+          "ScreenChange": true,
+          "DisplayName": "Example",
+          "CaptureLayoutDelay": 500,
+          "ScreenShot": true,
+          "NumberOfWebViews": 0,
+          "CaptureUserEvents": true,
+          "CaptureScreenVisits": false,
+          "CaptureLayoutOn": 2,
+          "CaptureScreenshotOn": 2,
+          "Masking": {
+            "HasMasking": true,
+            "HasCustomMask": true,
+            "Sensitive": {
+              "capitalCaseAlphabet": "X",
+              "number": "9",
+              "smallCaseAlphabet": "x",
+              "symbol": "#"
+            },
+            "MaskIdList": [],
+            "MaskValueList": []
+          }
         }
+      },
+      "MainActivity": {
+        "ScreenChange": true,
+        "DisplayName": "LoginActivity",
+        "CaptureLayoutOn": 2,
+        "Masking": {
+          "HasMasking": true,
+          "HasCustomMask": true,
+          "Sensitive": {
+            "capitalCaseAlphabet": "X",
+            "number": "9",
+            "smallCaseAlphabet": "x",
+            "symbol": "#"
+          },
+          "MaskIdList": [
+            "password"
+          ],
+          "MaskValueList": [],
+          "MaskAccessibilityIdList": [],
+          "MaskAccessibilityLabelList": [
+            "Masking",
+            "Test Masking",
+            "password"
+          ]
+        }
+      },
+      "Button": {
+        "ScreenChange": true,
+        "DisplayName": "Visible",
+        "CaptureLayoutDelay": 500,
+        "ScreenShot": true,
+        "NumberOfWebViews": 0,
+        "CaptureUserEvents": true,
+        "CaptureScreenVisits": true,
+        "CaptureLayoutOn": 2,
+        "CaptureScreenshotOn": 2
+      },
+      "ErrorTest": {
+        "ScreenChange": false,
+        "DisplayName": "Hidden",
+        "CaptureLayoutDelay": 1,
+        "ScreenShot": false,
+        "NumberOfWebViews": 0,
+        "CaptureUserEvents": false,
+        "CaptureScreenVisits": false,
+        "CaptureLayoutOn": 0,
+        "CaptureScreenshotOn": 0
+      },
+      "AppendMapIds": {
+        "[w,9290],[v,0]": {
+          "mid": "ASimpleUIView"
+        },
+        "tag2999999": {
+          "mid": "giveAdditionalId1"
+        },
+        "idxPathValue": {
+          "mid": "giveAdditionalId2"
+        }
+      }
     }
+  }
 }

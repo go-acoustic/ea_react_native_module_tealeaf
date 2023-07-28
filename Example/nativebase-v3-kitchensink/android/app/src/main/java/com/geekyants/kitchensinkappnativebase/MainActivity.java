@@ -39,6 +39,7 @@ public class MainActivity extends ReactActivity {
         );
     }
 
+    @Override
     public boolean dispatchTouchEvent(MotionEvent e) {
         Tealeaf.dispatchTouchEvent(this, e);
         return super.dispatchTouchEvent(e);
