@@ -278,8 +278,10 @@ RCT_EXPORT_METHOD(logTextChangeEvent:(nonnull NSNumber *)target controlId:(NSStr
  @return Boolean value will return whether it was able to log the screenview event.
  */
 RCT_EXPORT_METHOD(setCurrentScreenName:(NSString*)logicalPageName resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    id result = [NSNumber numberWithBool:[[TLFApplicationHelper sharedInstance] resumeTealeaf:logicalPageName]];
-    [self updateResult:result resolver:resolve rejecter:reject];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        id result = [NSNumber numberWithBool:[[TLFApplicationHelper sharedInstance] resumeTealeaf:logicalPageName]];
+        [self updateResult:result resolver:resolve rejecter:reject];
+    });
 }
 
 /*!

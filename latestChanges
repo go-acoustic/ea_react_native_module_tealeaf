@@ -1,13 +1,11 @@
 Bug Fixes
 
-- None.
+- Fix a thread issue with setCurrentScreenName on iOS.
 
 
 Improvements:
 
-- Update to be used with Quickstart.
-- Add ability to keep track of current page name for react native.
-- Fixed extra screenviews due to changes to now using webview versus converting to native controls.
+- None.
 
 
 Our environment for this release:
