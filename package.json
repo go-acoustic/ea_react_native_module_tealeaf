@@ -36,5 +36,5 @@
         "verifyTealeafSetup": "node scripts/verifyTealeafSetup.js $INIT_CWD"
     },
     "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-    "version": "15.0.6"
+    "version": "15.0.8"
 }

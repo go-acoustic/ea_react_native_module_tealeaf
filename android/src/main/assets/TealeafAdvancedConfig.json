@@ -1,5 +1,5 @@
 {
-  "LibraryVersion": "10.3.109",
+  "LibraryVersion": "10.3.347",
   "FilterMessageTypes": false,
   "MessageTypes": "4,5",
   "AddMessageTypeHeader": false,
@@ -10,9 +10,9 @@
   "DefaultTextViewGravity": "left",
   "DefaultTextViewPaddingLeft": 5,
   "DefaultTextViewPaddingRight": 5,
-  "DefaultAutoLayoutDelay": 500,
+  "DefaultAutoLayoutDelay": 1,
   "ScreenViewUnloadDelay": 1000,
-  "GestureConfirmedScreenshotDelay": 100,
+  "GestureConfirmedScreenshotDelay": 1,
   "RemoveIp": false,
   "IpPlaceholder": "N/A",
   "UseZindex": false,

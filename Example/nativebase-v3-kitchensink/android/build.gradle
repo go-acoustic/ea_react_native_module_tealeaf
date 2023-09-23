@@ -45,5 +45,8 @@ allprojects {
             }
         }
         maven { url 'https://www.jitpack.io' }
+
+        // This is required for the Tealeaf module to use staging repo
+        maven { url "https://s01.oss.sonatype.org/content/groups/staging" }
     }
 }

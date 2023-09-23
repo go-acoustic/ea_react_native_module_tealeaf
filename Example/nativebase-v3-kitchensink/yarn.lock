@@ -8422,10 +8422,10 @@ react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
 
-react-native-acoustic-ea-tealeaf@15.0.4:
-  version "15.0.4"
-  resolved "https://registry.yarnpkg.com/react-native-acoustic-ea-tealeaf/-/react-native-acoustic-ea-tealeaf-15.0.4.tgz#729229ff2416d2d4c8af2a830269b68f8bb3ccbf"
-  integrity sha512-uH3Mk58o/enWpxMW6nPH9swD5zcPu9WzdSz/VWTPvsJ9zfFCVPzo9P01FtQa0mbo2E0LevthBvmKU56bBN7ReA==
+react-native-acoustic-ea-tealeaf@15.0.7:
+  version "15.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-acoustic-ea-tealeaf/-/react-native-acoustic-ea-tealeaf-15.0.7.tgz#cb87525c4fbd4cb2e0513652f00e8e83fb30ed25"
+  integrity sha512-HiNSxAiYJvCWx/5Z9hmXTVlVlZZf0/IQcnuQPW0wLSIepaO74VwXqhRLhMJv9BYfwP70rzZJcgVUGc+r+8yWvQ==
 
 react-native-codegen@^0.70.6:
   version "0.70.6"

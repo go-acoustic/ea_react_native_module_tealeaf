@@ -68,9 +68,7 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
      */
     @ReactMethod
     public void setCurrentScreenName(final String logicalPageName, final Promise promise) {
-        boolean result =
-                Tealeaf.resumeTealeaf(true) && Tealeaf.logScreenview(getCurrentActivity(),
-                        logicalPageName, ScreenviewType.VISIT);
+        boolean result = Tealeaf.resumeTealeaf(getCurrentActivity(), logicalPageName, false);
         updateResult(result, promise);
     }
 
@@ -188,9 +186,16 @@ public class RNCxaModule extends ReactContextBaseJavaModule implements Lifecycle
      */
     @ReactMethod
     public void logScreenLayout(final String logicalPageName, final int delay, final Promise promise) {
+        /**
+         * Init current page, check before loglayout.
+         */
+        Tealeaf.setCurrentLogicalPageName(logicalPageName);
         Tealeaf.logScreenview(getCurrentActivity(), logicalPageName, ScreenviewType.LOAD);
-        final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
-        updateResult(result, promise);
+        if (LayoutUtil.canCaptureUserEvents(null, logicalPageName)) {
+            final boolean result = Tealeaf.logScreenLayout(getCurrentActivity(), logicalPageName, delay < 0 ? 300 : delay, true);
+            updateResult(result, promise);
+        }
+        updateResult(true, promise);
     }
 
     /**

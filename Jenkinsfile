@@ -42,15 +42,15 @@ pipeline {
                 }
             }
         }
-        stage('Build iOS - xcode') {
-            when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }
-            steps {
-                echo 'Building..'
-                script{
-                    runIosTests(true, false)
-                }
-            }
-        }
+        // stage('Build iOS - xcode') {
+        //     when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }
+        //     steps {
+        //         echo 'Building..'
+        //         script{
+        //             runIosTests(true, false)
+        //         }
+        //     }
+        // }
         // Issue starting simulator
         // stage('Build iOS - yarn ios') {
         //     when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }

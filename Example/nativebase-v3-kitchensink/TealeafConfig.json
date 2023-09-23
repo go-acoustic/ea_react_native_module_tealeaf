@@ -15,7 +15,7 @@
         "GlobalScreenSettings": {
           "ScreenChange": true,
           "DisplayName": "Default name",
-          "CaptureLayoutDelay": 500,
+          "CaptureLayoutDelay": 1,
           "ScreenShot": true,
           "NumberOfWebViews": 0,
           "CaptureUserEvents": true,
