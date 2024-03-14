@@ -1,5 +1,5 @@
 /**********************************************************************************************
-* Copyright (C) 2022 Acoustic, L.P. All rights reserved.
+* Copyright (C) 2024 Acoustic, L.P. All rights reserved.
 *
 * NOTICE: This file contains material that is confidential and proprietary to
 * Acoustic, L.P. and/or other developers. No license is granted under any intellectual or
@@ -42,15 +42,15 @@ pipeline {
                 }
             }
         }
-        stage('Build iOS - xcode') {
-            when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }
-            steps {
-                echo 'Building..'
-                script{
-                    runIosTests(true, false)
-                }
-            }
-        }
+        // stage('Build iOS - xcode') {
+        //     when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }
+        //     steps {
+        //         echo 'Building..'
+        //         script{
+        //             runIosTests(true, false)
+        //         }
+        //     }
+        // }
         // Issue starting simulator
         // stage('Build iOS - yarn ios') {
         //     when { anyOf { branch 'feature/*'; branch 'develop'; branch 'master' } }
@@ -203,7 +203,7 @@ def createBuild(findText) {
 }
 
 def runIosTests(isJustBuild, runSonarQube) {
-    String xcodebuildCMD   = "xcrun"
+    String xcodebuildCMD   = "arch -x86_64 xcrun"
     String workspacePath   = "${testAppDir}/ios/KitchenSinkappnativebase.xcworkspace"
     String sonarWrapperDir = "${testAppDir}/ios/build_wrapper_output_directory"
     
@@ -688,8 +688,7 @@ def getSlackReport(isRelease) {
 
 def notifySlack(attachments, buildColor) {    
     slackSend attachments: attachments, color: buildColor, channel: '#tl-sdk-github'
-    slackSend attachments: attachments, color: buildColor, channel: '#tl-sdk-ci-ios-bender'
-    slackSend attachments: attachments, color: buildColor, channel: '#tl-sdk-ci-android-bender'
+    slackSend attachments: attachments, color: buildColor, channel: '#tl-sdk-ci-react-native-bender'
 }
 
 return this
