@@ -416,7 +416,7 @@ def checkoutReleaseRepo() {
     echo "Create test push location: ${tempTestDir}"
     cleanMkDir("${tempTestDir}")
     runCMD("cd ${tempTestDir} && git clone git@github.com:aipoweredmarketer/ea_react_native_module_tealeaf.git -b master")
-    runCMD("cd ${tempTestDir} && git clone git@github.com:acoustic-analytics/ea_react_native_module_tealeaf.git -b master")
+    runCMD("cd ${tempTestDir} && git clone git@github.com:go-acoustic/ea_react_native_module_tealeaf.git -b master")
 }
 
 def gitPush(path, commitMsg, tagMsg, branch, commitMsg2) {
@@ -480,12 +480,12 @@ def publishRelease() {
     sleep 30
 
     echo "Search and replace text to fix with public name at ea_react_native_module_tealeaf"
-    runCMD("cd ${releaseDir} && git grep -l 'https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf/https:\\/\\/github.com\\/acoustic-analytics\\/ea_react_native_module_tealeaf/g'")
+    runCMD("cd ${releaseDir} && git grep -l 'https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf/https:\\/\\/github.com\\/go-acoustic\\/ea_react_native_module_tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l 'ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/ea_react_native_module_tealeaf/ea_react_native_module_tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l 'tealeaf' | xargs sed -i '' -e 's/tealeaf/tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l '' | xargs sed -i '' -e 's///g'")
     runCMD("cd ${releaseDir} && git grep -l 'react-native-acoustic-ea-tealeaf.podspec' | xargs sed -i '' -e 's/react-native-acoustic-ea-tealeaf.podspec/react-native-acoustic-ea-tealeaf.podspec/g'")
-    runCMD("cd ${releaseDir} && git grep -l 'https://raw.githubusercontent.com/acoustic-analytics/Android_Maven/master' | xargs sed -i '' -e 's/https:\\/\\/raw.githubusercontent.com\\/acoustic-analytics\\/Android_Maven\\/beta/https:\\/\\/raw.githubusercontent.com\\/acoustic-analytics\\/Android_Maven\\/master/g'")
+    runCMD("cd ${releaseDir} && git grep -l 'https://raw.githubusercontent.com/go-acoustic/Android_Maven/master' | xargs sed -i '' -e 's/https:\\/\\/raw.githubusercontent.com\\/go-acoustic\\/Android_Maven\\/beta/https:\\/\\/raw.githubusercontent.com\\/go-acoustic\\/Android_Maven\\/master/g'")
     runCMD("cd ${releaseDir} && git grep -l 'TealeafReactNativeDebug' | xargs sed -i '' -e 's/TealeafReactNativeDebug/TealeafReactNativeDebug/g'")
     runCMD("mv ${releaseDir}/react-native-acoustic-ea-tealeaf.podspec  ${releaseDir}/react-native-acoustic-ea-tealeaf.podspec")
 
