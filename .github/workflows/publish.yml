@@ -20,7 +20,7 @@
 #
 # Prerequisites:
 #   - npm package must be configured with GitHub as a Trusted Publisher
-#   - Repository must match: aipoweredmarketer/ea_react_native_module_tealeaf
+#   - Repository must match: go-acoustic/ea_react_native_module_tealeaf
 #   - GitHub releases must contain the tarball as an asset
 #   - npm CLI version 11.5.1 or later (upgraded automatically in this workflow)
 #
@@ -48,7 +48,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     # Only publish from the main repository, not forks
-    if: github.repository == 'aipoweredmarketer/ea_react_native_module_tealeaf'
+    if: github.repository == 'go-acoustic/ea_react_native_module_tealeaf'
     # Timeout for the entire job (15 minutes total)
     timeout-minutes: 15
 
@@ -103,7 +103,7 @@ jobs:
           # SEPARATE npm packages, not pre-release versions of the same package:
           #
           # - Beta package: react-native-acoustic-ea-tealeaf
-          #   - Repository: aipoweredmarketer/ea_react_native_module_tealeaf (private)
+          #   - Repository: go-acoustic/ea_react_native_module_tealeaf (private)
           #   - Installation: npm install react-native-acoustic-ea-tealeaf
           #   - Purpose: Early access, testing, and preview features
           #

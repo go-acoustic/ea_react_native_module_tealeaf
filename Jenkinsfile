@@ -413,14 +413,14 @@ def checkoutRepo() {
     // Setup temp directory for repos for publishing
     echo "Create test push location: ${tempTestDir}"
     cleanMkDir("${tempTestDir}")
-    runCMD("cd ${tempTestDir} && git clone git@github.com:aipoweredmarketer/ea_react_native_module_tealeaf.git -b ${srcBranch}")
+    runCMD("cd ${tempTestDir} && git clone git@github.com:go-acoustic/ea_react_native_module_tealeaf.git -b ${srcBranch}")
 }
 
 def checkoutReleaseRepo() {
     // Setup temp directory for repos for publishing
     echo "Create test push location: ${tempTestDir}"
     cleanMkDir("${tempTestDir}")
-    runCMD("cd ${tempTestDir} && git clone git@github.com:aipoweredmarketer/ea_react_native_module_tealeaf.git -b master")
+    runCMD("cd ${tempTestDir} && git clone git@github.com:go-acoustic/ea_react_native_module_tealeaf.git -b master")
     runCMD("cd ${tempTestDir} && git clone git@github.com:go-acoustic/ea_react_native_module_tealeaf.git -b master")
 }
 
@@ -439,8 +439,9 @@ def gitPush(path, commitMsg, tagMsg, branch, commitMsg2) {
 
     // Push to git
     echo "Push to git"
-    runCMD('''cd \"''' + path + '''\" && git push -f --tags''')
+    // IMPORTANT: Push branch BEFORE tags so workflow file exists when tag triggers GitHub Actions
     runCMD('''cd \"''' + path + '''\" && git push -f --set-upstream origin \"''' + branch + '''\"''')
+    runCMD('''cd \"''' + path + '''\" && git push -f --tags''')
 }
 
 // "Update files for beta"
@@ -464,7 +465,7 @@ def updateDescription() {
  *
  * @param tgzFilePath - Full path to the tarball file to upload (e.g., "${buildDir}/package-name-1.0.0.tgz")
  * @param version - Version tag for the release (e.g., "15.0.27"). This must match the git tag created earlier.
- * @param repository - GitHub repository in "owner/repo" format (e.g., "aipoweredmarketer/ea_react_native_module_tealeaf")
+ * @param repository - GitHub repository in "owner/repo" format (e.g., "go-acoustic/ea_react_native_module_tealeaf")
  *
  * @requires GitHub credentials via 'github.https.appid' credential ID (GITHUB_USER and GITHUB_TOKEN)
  * @requires commitDesciption global variable for release body text
@@ -625,12 +626,12 @@ def publishBeta() {
 
     // Upload tarball to GitHub release AFTER tag is pushed
     echo "Starting GitHub release upload..."
-    uploadToGitHubRelease("${buildDir}/${tgzFile}", currentVersion, "aipoweredmarketer/ea_react_native_module_tealeaf")
+    uploadToGitHubRelease("${buildDir}/${tgzFile}", currentVersion, "go-acoustic/ea_react_native_module_tealeaf")
     echo "GitHub release upload completed"
 
     // Wait for GitHub Actions to publish to npm
     echo "Waiting for GitHub Actions to publish to npm..."
-    def publishResult = waitForGitHubActionsPublish(currentVersion, "aipoweredmarketer/ea_react_native_module_tealeaf")
+    def publishResult = waitForGitHubActionsPublish(currentVersion, "go-acoustic/ea_react_native_module_tealeaf")
 
     // Store results in global variables for Slack notification
     githubActionsUrl = publishResult.workflowUrl
@@ -653,7 +654,7 @@ def publishBeta() {
  * 2. Cleans the release repository
  * 3. Copies all files from beta repo to release repo
  * 4. Performs search-and-replace to transform package names:
- *    - Repository URLs: aipoweredmarketer/ea_react_native_module_tealeaf → go-acoustic/ea_react_native_module_tealeaf
+ *    - Repository URLs: go-acoustic/ea_react_native_module_tealeaf → go-acoustic/ea_react_native_module_tealeaf
  *    - Package names: ea_react_native_module_tealeaf → ea_react_native_module_tealeaf
  *    - Removes "" prefixes from documentation
  *    - Renames podspec file
@@ -689,6 +690,7 @@ def publishRelease() {
 
     echo "Search and replace text to fix with public name at ea_react_native_module_tealeaf"
     runCMD("cd ${releaseDir} && git grep -l 'https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/https:\\/\\/github.com\\/aipoweredmarketer\\/ea_react_native_module_tealeaf/https:\\/\\/github.com\\/go-acoustic\\/ea_react_native_module_tealeaf/g'")
+    runCMD("cd ${releaseDir} && git grep -l 'go-acoustic/ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/aipoweredmarketer\\/ea_react_native_module_tealeaf/go-acoustic\\/ea_react_native_module_tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l 'ea_react_native_module_tealeaf' | xargs sed -i '' -e 's/ea_react_native_module_tealeaf/ea_react_native_module_tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l 'tealeaf' | xargs sed -i '' -e 's/tealeaf/tealeaf/g'")
     runCMD("cd ${releaseDir} && git grep -l '' | xargs sed -i '' -e 's///g'")
@@ -749,6 +751,19 @@ def publishRelease() {
     echo "Starting GitHub release upload for public repo..."
     uploadToGitHubRelease("${releaseDir}/${tgzFile}", currentVersion, "go-acoustic/ea_react_native_module_tealeaf")
     echo "GitHub release upload completed for public repo"
+
+    // Wait for GitHub Actions to publish to npm
+    echo "Waiting for GitHub Actions to publish release to npm..."
+    def publishResult = waitForGitHubActionsPublish(currentVersion, "go-acoustic/ea_react_native_module_tealeaf")
+
+    // Store results in global variables for Slack notification
+    githubActionsUrl = publishResult.workflowUrl
+    npmPublishStatus = publishResult.publishStatus
+    npmPublishedVersion = publishResult.publishedVersion
+
+    echo "GitHub Actions publish check completed for release"
+    echo "Workflow URL: ${githubActionsUrl}"
+    echo "Publish Status: ${npmPublishStatus}"
 }
 
 def populateSlackMessageGlobalVariables() {
