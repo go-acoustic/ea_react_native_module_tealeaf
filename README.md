@@ -23,7 +23,7 @@ If you have already installed Node on your system, make sure it is Node 14 or ne
 # Demo
 ## Sample Code with integrated
 ### Using NativeBase v3 KitchenSink
- ![demo](https://github.com/acoustic-analytics/ea_react_native_module_tealeaf/blob/master/Example/nativebase-v3-kitchensink/assets/demo.png)
+ ![demo](https://github.com/go-acoustic/ea_react_native_module_tealeaf/blob/master/Example/nativebase-v3-kitchensink/assets/demo.png)
 
 * NativeBase-KitchenSink taken from https://github.com/GeekyAnts/nativebase-v3-kitchensink which is at Example/nativebase-v3-kitchensink. 
 
@@ -33,3 +33,4 @@ If you have already installed Node on your system, make sure it is Node 14 or ne
 ---
 # Notes
 There are several know issues between npm install versus yarn install. Since yarn is a Facebook tool. It normally has fixes patched for installing dependancies. 
+class HelloSwiftApplication

@@ -8,7 +8,7 @@
         "prettier-plugin-java": "^1.6.2",
         "react-native": "^0.70.6"
     },
-    "homepage": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf",
+    "homepage": "https://github.com/go-acoustic/ea_react_native_module_tealeaf",
     "keywords": [
         "react-native",
         "ios",
@@ -27,7 +27,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/acoustic-analytics/ea_react_native_module_tealeaf"
+        "url": "https://github.com/go-acoustic/ea_react_native_module_tealeaf"
     },
     "scripts": {
         "applyConfiguration": "node scripts/applyConfiguration.js $INIT_CWD",
@@ -36,5 +36,5 @@
         "verifyTealeafSetup": "node scripts/verifyTealeafSetup.js $INIT_CWD"
     },
     "summary": "react-native ios android tealeaf cxa wxca er enhanced-replay",
-    "version": "15.0.11"
+    "version": "15.0.31"
 }

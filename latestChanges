@@ -10,7 +10,9 @@ Improvements:
 
 Our environment for this release:
 
-- Xcode 14.2
+- npm 11.6.2
+- node 20.19.0
+- Xcode 26
 - MacOS 13.2
 - iOS 12.x to 15.x
 - Supported architectures:
@@ -25,4 +27,3 @@ Known Issues
 
 - After iOS 13, library no longer supports iPad because of Apple changes in iPad OS.
 - Dual sim features are in beta. Example information using multiple carriers.
-       
